@@ -271,8 +271,8 @@ color Tomorrow-Night
 
 
 " Directories for swp files
-" set backupdir=~/.vim/backup
-" set directory=~/.vim/backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
 
 " Turn off jslint errors by default
 let g:JSLintHighlightErrorLine = 0
