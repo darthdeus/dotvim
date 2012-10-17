@@ -83,9 +83,6 @@ set winheight=999
 
 " Change the leader to ","
 let mapleader=","
-"
-" Command-T configuration
-let g:CommandTMaxHeight=20
 
 " Switching between active files in a buffer.
 nnoremap <leader><leader> <c-^>
@@ -153,25 +150,25 @@ map <leader>v :view %%
 map <Leader>te :tabe %%
 
 " Open files with <leader>f
-map <leader>f :CommandTFlush<CR>\|:CommandT<CR>
+map <leader>f :CtrlP<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
-map <leader>F :CommandTFlush<CR>\|:CommandT %%<CR>
-map <leader>gf :CommandTFlush<CR>\|:CommandT %%<CR>
+map <leader>F :CtrlP %%<CR>
+map <leader>gf :CtrlP %%<CR>
 
 " Rails specific keystrokes
 map <leader>gr :topleft :split config/routes.rb<CR>
 map <leader>gg :topleft 50 :split Gemfile<CR>
 
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
-map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
-map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+map <leader>gv :CtrlP app/views<cr>
+map <leader>gc :CtrlP app/controllers<cr>
+map <leader>gm :CtrlP app/models<cr>
+map <leader>gh :CtrlP app/helpers<cr>
+map <leader>gd :CtrlP app/decorators<cr>
+map <leader>gl :CtrlP lib<cr>
+map <leader>gt :CtrlP spec<cr>
+map <leader>ga :CtrlP app/assets<cr>
+map <leader>gs :CtrlP app/assets/stylesheets<cr>
+map <leader>gj :CtrlP app/assets/javascripts<cr>
 
 nmap <C-a> ^
 nmap <C-e> $
