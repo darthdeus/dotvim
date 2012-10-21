@@ -1,6 +1,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+set tags+=gems.tags
+
 " Include user's local pre .vimrc config
 if filereadable(expand("~/.vimrc.pre"))
   source ~/.vimrc.pre
@@ -88,9 +90,8 @@ let mapleader=","
 nnoremap <leader><leader> <c-^>
 
 " CTags
-" TODO - do i need ctags?
-" map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-" map <C-\> :tnext<CR>
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <C-\> :tnext<CR>
 
 " TODO - paste?
 map <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
