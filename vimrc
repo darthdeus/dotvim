@@ -163,13 +163,16 @@ map <leader>gg :topleft 50 :split Gemfile<CR>
 map <leader>gv :CtrlP app/views<cr>
 map <leader>gc :CtrlP app/controllers<cr>
 map <leader>gm :CtrlP app/models<cr>
+map <leader>gs :CtrlP app/services<cr>
 map <leader>gh :CtrlP app/helpers<cr>
 map <leader>gd :CtrlP app/decorators<cr>
 map <leader>gl :CtrlP lib<cr>
 map <leader>gt :CtrlP spec<cr>
 map <leader>ga :CtrlP app/assets<cr>
-map <leader>gs :CtrlP app/assets/stylesheets<cr>
+map <leader>gk :CtrlP app/assets/stylesheets<cr>
 map <leader>gj :CtrlP app/assets/javascripts<cr>
+
+let g:ctrlp_custom_ignore = 'node_modules'
 
 nmap <C-a> ^
 nmap <C-e> $
