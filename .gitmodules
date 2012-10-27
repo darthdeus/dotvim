@@ -55,3 +55,18 @@
 [submodule "bundle/endwise"]
 	path = bundle/endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "bundle/scala"]
+	path = bundle/scala
+	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "bundle/haskell"]
+	path = bundle/haskell
+	url = https://github.com/wlangstroth/vim-haskell.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/rake"]
+	path = bundle/rake
+	url = https://github.com/tpope/vim-rake.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

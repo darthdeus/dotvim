@@ -90,7 +90,7 @@ let mapleader=","
 nnoremap <leader><leader> <c-^>
 
 " CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <Leader>ct :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
 
 " TODO - paste?
@@ -132,7 +132,9 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-au BufRead,BufNewFile *.txt call s:setupWrapping()
+au BufNewFile,BufRead *.txt call s:setupWrapping()
+
+
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -310,9 +312,9 @@ function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
     :silent !echo;echo;echo;echo;echo
-   exec ":!zeus rspec " . a:filename
+   " exec ":!zeus rspec " . a:filename
    " exec ":!bundle exec rspec " . a:filename
-   " exec ":!./script/test " . a:filename
+   exec ":!./script/test " . a:filename
 endfunction
 
 function! SetTestFile()
@@ -342,6 +344,13 @@ function! RunNearestTest()
     call RunTestFile(":" . spec_line_number)
 endfunction
 
+
+" User Makefile for node projects
+function s:setupMake()
+  nmap <leader>r :!make<CR>
+endfunction
+
+au BufNewFile,BufRead *.js call s:setupMake()
 
 " Run this file
 map <leader>t :call RunTestFile()<cr>
