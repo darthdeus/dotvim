@@ -1,10 +1,13 @@
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle "gmarik/vundle"
 
-Bundle "mileszs/ack"
+Bundle "mileszs/ack.vim"
 Bundle "pangloss/vim-javascript"
 Bundle "tomtom/tcomment_vim"
 Bundle "tomtom/tlib_vim"
@@ -19,16 +22,16 @@ Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-rake"
 
-Bundke "honza/snipmate-snippets"
+Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "bbommarito/vim-slim"
-Bundle "kchmck/vim-coffee/script"
+Bundle "kchmck/vim-coffee-script"
 Bundle "scrooloose/nerdtree"
 
 Bundle "altercation/vim-colors-solarized"
 Bundle "krisajenkins/vim-projectlocal"
-Bundle "wincent/command-t"
+Bundle "wincent/Command-T"
 
 
 
@@ -38,10 +41,6 @@ set tags+=gems.tags
 if filereadable(expand("~/.vimrc.pre"))
   source ~/.vimrc.pre
 endif
-
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
