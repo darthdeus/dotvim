@@ -1,6 +1,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+set tags+=gems.tags
+
 " Include user's local pre .vimrc config
 if filereadable(expand("~/.vimrc.pre"))
   source ~/.vimrc.pre
@@ -83,17 +85,13 @@ set winheight=999
 
 " Change the leader to ","
 let mapleader=","
-"
-" Command-T configuration
-let g:CommandTMaxHeight=20
 
 " Switching between active files in a buffer.
 nnoremap <leader><leader> <c-^>
 
 " CTags
-" TODO - do i need ctags?
-" map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-" map <C-\> :tnext<CR>
+map <Leader>ct :!ctags --extra=+f -R *<CR><CR>
+map <C-\> :tnext<CR>
 
 " TODO - paste?
 map <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
@@ -127,14 +125,16 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set f
 " noremap <Down>     <NOP>
 " noremap <Left>     <NOP>
 " noremap <Right>    <NOP>
-" 
+"
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-au BufRead,BufNewFile *.txt call s:setupWrapping()
+au BufNewFile,BufRead *.txt call s:setupWrapping()
+
+
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -153,10 +153,10 @@ map <leader>v :view %%
 map <Leader>te :tabe %%
 
 " Open files with <leader>f
-map <leader>f :CommandTFlush<CR>\|:CommandT<CR>
+map <leader>f :CommandTFlush<cr>\|:CommandT<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
-map <leader>F :CommandTFlush<CR>\|:CommandT %%<CR>
-map <leader>gf :CommandTFlush<CR>\|:CommandT %%<CR>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<CR>
+map <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
 
 " Rails specific keystrokes
 map <leader>gr :topleft :split config/routes.rb<CR>
@@ -165,13 +165,16 @@ map <leader>gg :topleft 50 :split Gemfile<CR>
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT app/services<cr>
 map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
 map <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
+map <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
 map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+
+let g:ctrlp_custom_ignore = 'node_modules'
 
 nmap <C-a> ^
 nmap <C-e> $
@@ -309,9 +312,9 @@ function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
     :silent !echo;echo;echo;echo;echo
-   exec ":!zeus rspec " . a:filename
+   " exec ":!zeus rspec " . a:filename
    " exec ":!bundle exec rspec " . a:filename
-   " exec ":!./script/test " . a:filename
+   exec ":!./script/test " . a:filename
 endfunction
 
 function! SetTestFile()
@@ -342,6 +345,14 @@ function! RunNearestTest()
 endfunction
 
 
+" User Makefile for node projects
+function s:setupMake()
+  nmap <leader>r :!make<CR>
+endfunction
+
+au BufNewFile,BufRead *.js,*.coffee call s:setupMake()
+
+
 " Run this file
 map <leader>t :call RunTestFile()<cr>
 " Run only the example under the cursor
@@ -353,6 +364,11 @@ map <leader>a :call RunTests('spec')<cr>
 
 " remove unnecessary whitespaces?
 map <leader>ws :%s/ *$//g<cr><c-o><cr>
+
+map <C-r> :!rake<cr>
+if has("gui_running")
+  map <D-r> :!rake<cr>
+endif
 
 autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
 
