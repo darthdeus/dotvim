@@ -174,8 +174,6 @@ map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
 map <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
 map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
 
-let g:ctrlp_custom_ignore = 'node_modules'
-
 nmap <C-a> ^
 nmap <C-e> $
 
