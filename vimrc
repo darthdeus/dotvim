@@ -1,5 +1,36 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle "gmarik/vundle"
+
+Bundle "mileszs/ack"
+Bundle "pangloss/vim-javascript"
+Bundle "tomtom/tcomment_vim"
+Bundle "tomtom/tlib_vim"
+Bundle "godlygeek/tabular"
+
+Bundle "tpope/vim-bundler"
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-rvm"
+Bundle "tpope/vim-eunuch"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-rake"
+
+Bundke "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "bbommarito/vim-slim"
+Bundle "kchmck/vim-coffee/script"
+Bundle "scrooloose/nerdtree"
+
+Bundle "altercation/vim-colors-solarized"
+Bundle "krisajenkins/vim-projectlocal"
+Bundle "wincent/command-t"
+
+
 
 set tags+=gems.tags
 
