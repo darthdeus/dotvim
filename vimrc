@@ -365,6 +365,11 @@ map <leader>a :call RunTests('spec')<cr>
 " remove unnecessary whitespaces?
 map <leader>ws :%s/ *$//g<cr><c-o><cr>
 
+map <C-r> :!rake<cr>
+if has("gui_running")
+  map <D-r> :!rake<cr>
+endif
+
 autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
 
 let g:gist_private = 1
