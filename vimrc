@@ -125,7 +125,7 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set f
 " noremap <Down>     <NOP>
 " noremap <Left>     <NOP>
 " noremap <Right>    <NOP>
-" 
+"
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
@@ -153,26 +153,26 @@ map <leader>v :view %%
 map <Leader>te :tabe %%
 
 " Open files with <leader>f
-map <leader>f :CtrlP<CR>
+map <leader>f :CommandTFlush<cr>\|:CommandT<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
-map <leader>F :CtrlP %%<CR>
-map <leader>gf :CtrlP %%<CR>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<CR>
+map <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
 
 " Rails specific keystrokes
 map <leader>gr :topleft :split config/routes.rb<CR>
 map <leader>gg :topleft 50 :split Gemfile<CR>
 
-map <leader>gv :CtrlP app/views<cr>
-map <leader>gc :CtrlP app/controllers<cr>
-map <leader>gm :CtrlP app/models<cr>
-map <leader>gs :CtrlP app/services<cr>
-map <leader>gh :CtrlP app/helpers<cr>
-map <leader>gd :CtrlP app/decorators<cr>
-map <leader>gl :CtrlP lib<cr>
-map <leader>gt :CtrlP spec<cr>
-map <leader>ga :CtrlP app/assets<cr>
-map <leader>gk :CtrlP app/assets/stylesheets<cr>
-map <leader>gj :CtrlP app/assets/javascripts<cr>
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT app/services<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
+map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
+map <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
+map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
 
 let g:ctrlp_custom_ignore = 'node_modules'
 
