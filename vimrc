@@ -350,7 +350,8 @@ function s:setupMake()
   nmap <leader>r :!make<CR>
 endfunction
 
-au BufNewFile,BufRead *.js call s:setupMake()
+au BufNewFile,BufRead *.js,*.coffee call s:setupMake()
+
 
 " Run this file
 map <leader>t :call RunTestFile()<cr>
