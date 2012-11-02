@@ -12,6 +12,8 @@ Bundle "pangloss/vim-javascript"
 Bundle "tomtom/tcomment_vim"
 Bundle "tomtom/tlib_vim"
 Bundle "godlygeek/tabular"
+Bundle "wavded/vim-stylus"
+Bundle "ecomba/vim-ruby-refactoring"
 
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-fugitive"
