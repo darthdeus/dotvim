@@ -34,7 +34,9 @@ Bundle "scrooloose/nerdtree"
 Bundle "altercation/vim-colors-solarized"
 Bundle "krisajenkins/vim-projectlocal"
 Bundle "wincent/Command-T"
+Bundle "AndrewRadev/switch.vim"
 
+filetype plugin indent on
 
 
 set tags+=gems.tags
@@ -173,6 +175,8 @@ set backspace=indent,eol,start
 
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
+
+nnoremap - :Switch<cr>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
