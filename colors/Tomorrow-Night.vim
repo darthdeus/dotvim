@@ -246,7 +246,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:background, s:yellow, "")
-	call <SID>X("TabLine", s:foreground, s:background, "reverse")
+	call <SID>X("TabLine", s:window, s:foreground, "reverse")
+	call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
 	call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
 	call <SID>X("VertSplit", s:window, s:window, "none")
@@ -259,6 +260,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("MatchParen", "", s:selection, "")
 	call <SID>X("Folded", s:comment, s:background, "")
 	call <SID>X("FoldColumn", "", s:background, "")
+
 	if version >= 700
 		call <SID>X("CursorLine", "", s:line, "none")
 		call <SID>X("CursorLineNr", s:yellow, s:line, "none")
