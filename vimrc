@@ -14,6 +14,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "godlygeek/tabular"
 Bundle "wavded/vim-stylus"
 Bundle "ecomba/vim-ruby-refactoring"
+Bundle "pangloss/vim-javascript"
 
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-fugitive"
@@ -350,8 +351,8 @@ function! RunTests(filename)
     :w
     :silent !echo;echo;echo;echo;echo
    " exec ":!zeus rspec " . a:filename
-   " exec ":!bundle exec rspec " . a:filename
-   exec ":!./script/test " . a:filename
+   exec ":!bundle exec rspec " . a:filename
+   " exec ":!./script/test " . a:filename
 endfunction
 
 function! SetTestFile()
@@ -402,7 +403,7 @@ map <leader>a :call RunTests('spec')<cr>
 " remove unnecessary whitespaces?
 map <leader>ws :%s/ *$//g<cr><c-o><cr>
 
-map <C-r> :!rake<cr>
+map <F5> :!rake<cr>
 if has("gui_running")
   map <D-r> :!rake<cr>
 endif
@@ -422,6 +423,8 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+set complete=.,b,u,]
 
 set exrc
 set secure
