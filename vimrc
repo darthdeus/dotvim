@@ -24,6 +24,8 @@ Bundle "tpope/vim-eunuch"
 Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-rake"
+Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-unimpaired"
 
 Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
@@ -36,6 +38,8 @@ Bundle "altercation/vim-colors-solarized"
 Bundle "krisajenkins/vim-projectlocal"
 Bundle "wincent/Command-T"
 Bundle "AndrewRadev/switch.vim"
+Bundle "tsaleh/vim-matchit"
+Bundle "skwp/vim-rspec"
 
 filetype plugin indent on
 
