@@ -28,6 +28,7 @@ Bundle "tpope/vim-surround"
 Bundle "tpope/vim-rake"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-unimpaired"
+Bundle "tpope/vim-markdown"
 
 Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
@@ -42,6 +43,8 @@ Bundle "wincent/Command-T"
 Bundle "AndrewRadev/switch.vim"
 Bundle "tsaleh/vim-matchit"
 Bundle "skwp/vim-rspec"
+Bundle "mattn/gist-vim"
+Bundle "vim-scripts/fish.vim"
 
 filetype plugin indent on
 
@@ -131,7 +134,7 @@ let mapleader=","
 nnoremap <leader><leader> <c-^>
 
 " CTags
-map <Leader>ct :!ctags --extra=+f -R *<CR><CR>
+map <leader>ct :!ctags --extra=+f -R *<CR>
 map <C-\> :tnext<CR>
 
 " TODO - paste?
@@ -314,7 +317,8 @@ set modelines=10
 
 " No more solarized, but let's keep it in here for other servers
 " color github
-color Tomorrow-Night
+set bg=dark
+color base16-default
 
 " Default color scheme
 " for some reason, ir_black needs to be here first to make solarized work
@@ -437,5 +441,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 set complete=.,b,u,]
 
+" TODO - pull request this into the main fish.vim repo
+autocmd BufNewFile,BufRead *.fish set filetype=fish
+
 set exrc
 set secure
+
