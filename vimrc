@@ -1,6 +1,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+set shell=/bin/sh
+
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
