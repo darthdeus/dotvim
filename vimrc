@@ -82,6 +82,9 @@ set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
+" Enable mouse in terminal
+set mouse=niv
+
 " Searching
 set hlsearch
 set incsearch
