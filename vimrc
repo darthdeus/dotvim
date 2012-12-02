@@ -46,6 +46,10 @@ Bundle "skwp/vim-rspec"
 Bundle "mattn/gist-vim"
 Bundle "vim-scripts/fish.vim"
 
+Bundle "mattn/zencoding-vim"
+Bundle "nono/vim-handlebars"
+Bundle "aliva/vim-fish"
+
 filetype plugin indent on
 
 
@@ -224,6 +228,7 @@ map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
 map <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
 map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/templates<cr>
 
 nmap <C-a> ^
 nmap <C-e> $
@@ -431,6 +436,8 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+au BufNewFile,BufRead *.ejs set filetype=html
 
 set complete=.,b,u,]
 
