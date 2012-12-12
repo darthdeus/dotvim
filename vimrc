@@ -44,14 +44,12 @@ Bundle "AndrewRadev/switch.vim"
 Bundle "tsaleh/vim-matchit"
 Bundle "skwp/vim-rspec"
 Bundle "mattn/gist-vim"
-Bundle "vim-scripts/fish.vim"
 
 Bundle "mattn/zencoding-vim"
 Bundle "nono/vim-handlebars"
 Bundle "aliva/vim-fish"
 
 filetype plugin indent on
-
 
 set tags+=gems.tags
 
@@ -144,7 +142,6 @@ nnoremap <leader><leader> <c-^>
 map <leader>ct :!ctags --extra=+f -R *<CR>
 map <C-\> :tnext<CR>
 
-" TODO - paste?
 map <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
 
 " Remember last location in file
@@ -181,15 +178,12 @@ nnoremap <Down> <C-w>-
 nnoremap <Left> <C-w><
 nnoremap <Right> <C-w>>
 
-"
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
-
 au BufNewFile,BufRead *.txt call s:setupWrapping()
-
 
 
 " allow backspacing over everything in insert mode
@@ -202,7 +196,7 @@ nnoremap - :Switch<cr>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
-" map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
@@ -211,9 +205,11 @@ map <leader>v :view %%
 map <Leader>te :tabe %%
 
 " Open files with <leader>f
-map <leader>f :CommandTFlush<cr>\|:CommandT<CR>
+:
+
+map <leader>f  :CommandTFlush<cr>\|:CommandT<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<CR>
+map <leader>F  :CommandTFlush<cr>\|:CommandT %%<CR>
 map <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
 
 " Rails specific keystrokes
@@ -239,10 +235,6 @@ nmap <C-e> $
 function! RunFile()
    :w\|ruby%<CR>
 endfunction
-
-" Run current file with Ruby
-" TODO - change to run specs when specs file
-" nmap <leader>t :w\|ruby%<CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
@@ -356,7 +348,6 @@ if has("gui_running")
   " GRB: set window size"
   :set lines=60
   :set columns=140
-
 endif
 
 " Highlight current line
@@ -366,8 +357,8 @@ function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
     :silent !echo;echo;echo;echo;echo
-   " exec ":!zeus rspec " . a:filename
-   exec ":!bundle exec rspec " . a:filename
+   exec ":!fish -c 'rspec " . a:filename . "'"
+   " exec ":!bundle exec rspec " . a:filename
    " exec ":!./script/test " . a:filename
 endfunction
 
@@ -406,7 +397,6 @@ endfunction
 
 au BufNewFile,BufRead *.js,*.coffee call s:setupMake()
 
-
 " Run this file
 map <leader>t :call RunTestFile()<cr>
 " Run only the example under the cursor
@@ -416,17 +406,12 @@ map <leader>a :call RunTests('spec')<cr>
 
 :nnoremap <CR> :nohlsearch<CR>/<BS>
 
-" remove unnecessary whitespaces?
+" remove unnecessary whitespaces
 map <leader>ws :%s/ *$//g<cr><c-o><cr>
 
 map <F5> :!rake<cr>
-if has("gui_running")
-  map <D-r> :!rake<cr>
-endif
 
 autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
-
-let g:gist_private = 1
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
@@ -446,8 +431,6 @@ set complete=.,b,u,]
 
 " TODO - pull request this into the main fish.vim repo
 autocmd BufNewFile,BufRead *.fish set filetype=fish
-
-
 
 " plain annotations
 map <silent> <F10> !xmpfilter -a<cr>
