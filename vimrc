@@ -44,6 +44,7 @@ Bundle "AndrewRadev/switch.vim"
 Bundle "tsaleh/vim-matchit"
 Bundle "skwp/vim-rspec"
 Bundle "mattn/gist-vim"
+Bundle "mattn/webapi-vim"
 
 Bundle "mattn/zencoding-vim"
 Bundle "nono/vim-handlebars"
@@ -224,10 +225,9 @@ map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
 map <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
-map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
 map <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
 map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
-map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/templates<cr>
+map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
 
 nmap <C-a> ^
 nmap <C-e> $
@@ -310,6 +310,7 @@ elseif has("unix")
 endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
+let g:gist_post_private = 1
 
 " Use modeline overrides
 set modeline
@@ -460,6 +461,8 @@ imap <silent> <F12> <ESC><F12>a
 vmap <silent> <S-F12> ms:call RemoveRubyEval()<CR>
 nmap <silent> <S-F12> V<S-F12>
 imap <silent> <S-F12> <ESC><S-F12>a
+
+vmap <Leader>q Tab<CR>
 
 
 function! RemoveRubyEval() range
