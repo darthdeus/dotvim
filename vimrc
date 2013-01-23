@@ -50,6 +50,8 @@ Bundle "mattn/zencoding-vim"
 Bundle "nono/vim-handlebars"
 Bundle "aliva/vim-fish"
 
+Bundle "sjl/gundo.vim"
+
 filetype plugin indent on
 
 set tags+=gems.tags
@@ -111,8 +113,8 @@ function! InsertTabWrapper()
     endif
 endfunction
 
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
+" inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+" inoremap <s-tab> <c-n>
 
 command! W :w
 
