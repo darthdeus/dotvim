@@ -342,7 +342,7 @@ set showcmd
 set guioptions-=L
 set guioptions-=r
 
-set guifont=Menlo:h14
+set guifont=Menlo:h12
 
 if has("gui_running")
   " Automatically resize splits when resizing MacVim window
@@ -467,11 +467,6 @@ imap <silent> <S-F12> <ESC><S-F12>a
 vmap <Leader>q Tab<CR>
 
 nmap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
-
-" Save with backspace
-map <C-BS> <esc>:wa<CR>
-imap <C-BS> <esc>:wa<CR>
-
 
 function! RemoveRubyEval() range
   let begv = a:firstline
