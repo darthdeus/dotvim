@@ -134,7 +134,6 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
-
 " Change the leader to ","
 let mapleader=","
 
@@ -151,6 +150,14 @@ map <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
+endif
+
+if has('persistent_undo')
+  set undofile
+  if !isdirectory(expand('~/.vimundo'))
+    silent !mkdir ~/.vimundo > /dev/null 2>&1
+  endif
+  set undodir=~/.vimundo
 endif
 
 function s:setupWrapping()
