@@ -144,6 +144,8 @@ nnoremap <leader><leader> <c-^>
 map <leader>ct :!ctags --extra=+f -R *<CR>
 map <C-\> :tnext<CR>
 
+nnoremap <CR> :nohlsearch<CR>/<BS>
+
 map <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
 
 " Remember last location in file
@@ -152,6 +154,7 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
+" Save undo history
 if has('persistent_undo')
   set undofile
   if !isdirectory(expand('~/.vimundo'))
@@ -174,20 +177,6 @@ endfunction
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
-" " Bye Bye arrow keys!
-" inoremap <Up>      <NOP>
-" inoremap <Down>    <NOP>
-" inoremap <Left>    <NOP>
-" inoremap <Right>   <NOP>
-" noremap <Up>       <NOP>
-" noremap <Down>     <NOP>
-" noremap <Left>     <NOP>
-" noremap <Right>    <NOP>
-nnoremap <Up> <C-w>5-
-nnoremap <Down> <C-w>5+
-nnoremap <Left> <C-w>5<
-nnoremap <Right> <C-w>5>
-
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
@@ -202,21 +191,28 @@ set backspace=indent,eol,start
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 
+
+" Buffer resizing with arrow keys
+nnoremap <Up> <C-w>5-
+nnoremap <Down> <C-w>5+
+nnoremap <Left> <C-w>5<
+nnoremap <Right> <C-w>5>
+
 nnoremap - :Switch<cr>
 
-" Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
+" Expand %% to directory path of current buffer
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
 map <leader>v :view %%
 " open file in a tab
 map <Leader>te :tabe %%
 
-" Open files with <leader>f
-:
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
+
+" Open files with <leader>f
 map <leader>f  :CommandTFlush<cr>\|:CommandT<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
 map <leader>F  :CommandTFlush<cr>\|:CommandT %%<CR>
@@ -250,10 +246,6 @@ nmap <C-e> $
 function! RunFile()
    :w\|ruby%<CR>
 endfunction
-
-" Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " It's not like we need Q anyway
 cmap Q q
@@ -311,8 +303,6 @@ noremap!          <M-}> <C-O>}
 
 nmap Q <NOP>
 
-
-
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
@@ -331,7 +321,6 @@ let g:gist_post_private = 1
 set modeline
 set modelines=10
 
-" color Tomorrow-Night
 color base16-default
 set bg=dark
 
@@ -420,8 +409,6 @@ map <leader>T :call RunNearestTest()<cr>
 " Run all test files
 map <leader>a :call RunTests('spec')<cr>
 
-:nnoremap <CR> :nohlsearch<CR>/<BS>
-
 " remove unnecessary whitespaces
 map <leader>ws :%s/ *$//g<cr><c-o><cr>
 
@@ -479,8 +466,6 @@ imap <silent> <S-F12> <ESC><S-F12>a
 
 vmap <Leader>q Tab<CR>
 
-nmap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
-
 function! RemoveRubyEval() range
   let begv = a:firstline
   let endv = a:lastline
@@ -492,5 +477,9 @@ function! RemoveRubyEval() range
   redraw
 endfunction
 
+" Surround with {% raw %}content{% endraw %}
+nmap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
+
+set nomodeline
 set exrc
 set secure
