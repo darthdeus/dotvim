@@ -51,6 +51,7 @@ Bundle "nono/vim-handlebars"
 Bundle "aliva/vim-fish"
 
 Bundle "sjl/gundo.vim"
+Bundle "scrooloose/syntastic"
 
 filetype plugin indent on
 
@@ -95,6 +96,8 @@ set smartcase
 
 " Make tab completion for files/buffers act like bash
 set wildmenu
+
+set laststatus=0
 
 " TODO - how does this differ from "longest,list" only?
 " Tab completion
