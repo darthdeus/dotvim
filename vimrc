@@ -12,10 +12,10 @@ Bundle "gmarik/vundle"
 Bundle "mileszs/ack.vim"
 Bundle "pangloss/vim-javascript"
 Bundle "tomtom/tcomment_vim"
-Bundle "tomtom/tlib_vim"
-Bundle "godlygeek/tabular"
-Bundle "wavded/vim-stylus"
-Bundle "ecomba/vim-ruby-refactoring"
+" Bundle "tomtom/tlib_vim"
+" Bundle "godlygeek/tabular"
+" Bundle "wavded/vim-stylus"
+" Bundle "ecomba/vim-ruby-refactoring"
 Bundle "pangloss/vim-javascript"
 
 Bundle "tpope/vim-bundler"
@@ -27,7 +27,6 @@ Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-rake"
 Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-markdown"
 
 Bundle "honza/snipmate-snippets"
@@ -37,7 +36,6 @@ Bundle "bbommarito/vim-slim"
 Bundle "kchmck/vim-coffee-script"
 Bundle "scrooloose/nerdtree"
 
-Bundle "altercation/vim-colors-solarized"
 Bundle "krisajenkins/vim-projectlocal"
 Bundle "wincent/Command-T"
 Bundle "AndrewRadev/switch.vim"
@@ -48,9 +46,6 @@ Bundle "mattn/webapi-vim"
 
 Bundle "mattn/zencoding-vim"
 Bundle "nono/vim-handlebars"
-Bundle "aliva/vim-fish"
-
-Bundle "sjl/gundo.vim"
 
 filetype plugin indent on
 
@@ -126,7 +121,7 @@ set laststatus=2
 " Without setting this, ZoomWin restores windows in a way that causes
 " equalalways behavior to be triggered the next time CommandT is used.
 " This is likely a bludgeon to solve some other issue, but it works
-set noequalalways
+" set noequalalways
 
 set winwidth=100
 " We have to have a winheight bigger than we want to set winminheight. But if
@@ -396,7 +391,6 @@ function! RunNearestTest()
     call RunTestFile(":" . spec_line_number)
 endfunction
 
-
 " User Makefile for node projects
 function s:setupMake()
   nmap <leader>r :!make<CR>
@@ -416,7 +410,7 @@ map <leader>ws :%s/ *$//g<cr><c-o><cr>
 
 map <F5> :!rake<cr>
 
-autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
+" autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
@@ -425,63 +419,62 @@ endif
 
 " Ruby autocomplete
 " http://www.cuberick.com/2008/10/ruby-autocomplete-in-vim.html
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-
-au BufNewFile,BufRead *.ejs set filetype=html
+" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"
+" au BufNewFile,BufRead *.ejs set filetype=html
 
 set complete=.,b,u,]
 
 " TODO - pull request this into the main fish.vim repo
 autocmd BufNewFile,BufRead *.fish set filetype=fish
 
-" plain annotations
-map <silent> <F10> !xmpfilter -a<cr>
-nmap <silent> <F10> V<F10>
-imap <silent> <F10> <ESC><F10>a
-
-" Test::Unit assertions; use -s to generate RSpec expectations instead
-map <silent> <S-F10> !xmpfilter -s<cr>
-nmap <silent> <S-F10> V<S-F10>
-imap <silent> <S-F10> <ESC><S-F10>a
-
-" Annotate the full buffer
-" I actually prefer ggVG to %; it's a sort of poor man's visual bell 
-nmap <silent> <F11> mzggVG!xmpfilter -a<cr>'z
-imap <silent> <F11> <ESC><F11>
-
-" assertions
-nmap <silent> <S-F11> mzggVG!xmpfilter -u<cr>'z
-imap <silent> <S-F11> <ESC><S-F11>a
-
-" Add # => markers
-vmap <silent> <F12> !xmpfilter -m<cr>
-nmap <silent> <F12> V<F12>
-imap <silent> <F12> <ESC><F12>a
-
-" Remove # => markers
-vmap <silent> <S-F12> ms:call RemoveRubyEval()<CR>
-nmap <silent> <S-F12> V<S-F12>
-imap <silent> <S-F12> <ESC><S-F12>a
-
-vmap <Leader>q Tab<CR>
-
-function! RemoveRubyEval() range
-  let begv = a:firstline
-  let endv = a:lastline
-  normal Hmt
-  set lz
-  execute ":" . begv . "," . endv . 's/\s*# \(=>\|!!\).*$//e'
-  normal 'tzt`s
-  set nolz
-  redraw
-endfunction
-
+" " plain annotations
+" map <silent> <F10> !xmpfilter -a<cr>
+" nmap <silent> <F10> V<F10>
+" imap <silent> <F10> <ESC><F10>a
+"
+" " Test::Unit assertions; use -s to generate RSpec expectations instead
+" map <silent> <S-F10> !xmpfilter -s<cr>
+" nmap <silent> <S-F10> V<S-F10>
+" imap <silent> <S-F10> <ESC><S-F10>a
+"
+" " Annotate the full buffer
+" " I actually prefer ggVG to %; it's a sort of poor man's visual bell
+" nmap <silent> <F11> mzggVG!xmpfilter -a<cr>'z
+" imap <silent> <F11> <ESC><F11>
+"
+" " assertions
+" nmap <silent> <S-F11> mzggVG!xmpfilter -u<cr>'z
+" imap <silent> <S-F11> <ESC><S-F11>a
+"
+" " Add # => markers
+" vmap <silent> <F12> !xmpfilter -m<cr>
+" nmap <silent> <F12> V<F12>
+" imap <silent> <F12> <ESC><F12>a
+"
+" " Remove # => markers
+" vmap <silent> <S-F12> ms:call RemoveRubyEval()<CR>
+" nmap <silent> <S-F12> V<S-F12>
+" imap <silent> <S-F12> <ESC><S-F12>a
+"
+" vmap <Leader>q Tab<CR>
+"
+" function! RemoveRubyEval() range
+"   let begv = a:firstline
+"   let endv = a:lastline
+"   normal Hmt
+"   set lz
+"   execute ":" . begv . "," . endv . 's/\s*# \(=>\|!!\).*$//e'
+"   normal 'tzt`s
+"   set nolz
+"   redraw
+" endfunction
+"
 " Surround with {% raw %}content{% endraw %}
 nmap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
 
-set nomodeline
 set exrc
 set secure
