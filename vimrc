@@ -51,7 +51,6 @@ Bundle "nono/vim-handlebars"
 Bundle "aliva/vim-fish"
 
 Bundle "sjl/gundo.vim"
-Bundle "scrooloose/syntastic"
 
 filetype plugin indent on
 
