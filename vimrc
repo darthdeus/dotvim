@@ -231,11 +231,11 @@ map <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
 map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
 map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
 
-map <leader>da :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
-map <leader>dv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
-map <leader>dc :CommandTFlush<cr>\|:CommandT app/assets/javascripts/controllers<cr>
-map <leader>dr :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
-map <leader>dm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
+map <leader>da :CommandTFlush<cr>\|:CommandT app/assets/javascripts/<cr>templates
+map <leader>dv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/<cr>views
+map <leader>dc :CommandTFlush<cr>\|:CommandT app/assets/javascripts/<cr>controllers
+map <leader>dr :CommandTFlush<cr>\|:CommandT app/assets/javascripts/<cr>routes
+map <leader>dm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/<cr>models
 
 nmap <C-a> ^
 nmap <C-e> $
