@@ -46,6 +46,10 @@ Bundle "mattn/webapi-vim"
 
 Bundle "mattn/zencoding-vim"
 Bundle "nono/vim-handlebars"
+Bundle "aliva/vim-fish"
+
+Bundle "sjl/gundo.vim"
+Bundle "othree/html5.vim"
 
 filetype plugin indent on
 
@@ -425,11 +429,12 @@ endif
 " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "
 " au BufNewFile,BufRead *.ejs set filetype=html
-
-set complete=.,b,u,]
+" set complete=.,b,u,]
 
 " TODO - pull request this into the main fish.vim repo
-autocmd BufNewFile,BufRead *.fish set filetype=fish
+au BufNewFile,BufRead *.fish set filetype=fish
+au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.emblem set filetype=slim
 
 " " plain annotations
 " map <silent> <F10> !xmpfilter -a<cr>
@@ -473,6 +478,7 @@ autocmd BufNewFile,BufRead *.fish set filetype=fish
 "   redraw
 " endfunction
 "
+
 " Surround with {% raw %}content{% endraw %}
 nmap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
 
