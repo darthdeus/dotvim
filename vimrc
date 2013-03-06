@@ -18,7 +18,10 @@ Bundle "godlygeek/tabular"
 " Bundle "wavded/vim-stylus"
 " Bundle "ecomba/vim-ruby-refactoring"
 Bundle "pangloss/vim-javascript"
+Bundle "jimenezrick/vimerl"
+Bundle "elixir-lang/vim-elixir"
 Bundle "derekwyatt/vim-scala"
+Bundle "rodjek/vim-puppet"
 
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-fugitive"
@@ -105,7 +108,7 @@ set laststatus=0
 " TODO - how does this differ from "longest,list" only?
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp
 
 " TODO - what is the default behavior?
 " Remap the tab key to do autocompletion or indentation depending on the
