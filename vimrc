@@ -5,6 +5,7 @@ set shell=/bin/sh
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=/usr/local/opt/go/misc/vim
 call vundle#rc()
 
 Bundle "gmarik/vundle"
@@ -17,6 +18,7 @@ Bundle "godlygeek/tabular"
 " Bundle "wavded/vim-stylus"
 " Bundle "ecomba/vim-ruby-refactoring"
 Bundle "pangloss/vim-javascript"
+Bundle "derekwyatt/vim-scala"
 
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-fugitive"
@@ -49,10 +51,14 @@ Bundle "aliva/vim-fish"
 
 Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
+Bundle "ZoomWin"
 
 filetype plugin indent on
 
 set tags+=gems.tags
+autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+      \ pathogen#split(&tags) +
+      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
 " Include user's local pre .vimrc config
 if filereadable(expand("~/.vimrc.pre"))
