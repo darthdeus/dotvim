@@ -9,14 +9,13 @@ set rtp+=/usr/local/opt/go/misc/vim
 call vundle#rc()
 
 Bundle "gmarik/vundle"
+Bundle "wikitopian/hardmode"
 
 Bundle "mileszs/ack.vim"
 Bundle "pangloss/vim-javascript"
 Bundle "tomtom/tcomment_vim"
 Bundle "tomtom/tlib_vim"
 Bundle "godlygeek/tabular"
-" Bundle "wavded/vim-stylus"
-" Bundle "ecomba/vim-ruby-refactoring"
 Bundle "pangloss/vim-javascript"
 Bundle "jimenezrick/vimerl"
 Bundle "elixir-lang/vim-elixir"
@@ -422,8 +421,6 @@ map <leader>ws :%s/ *$//g<cr><c-o><cr>
 
 map <F5> :!rake<cr>
 
-" autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
-
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
@@ -486,6 +483,8 @@ au BufNewFile,BufRead *.emblem set filetype=slim
 "   redraw
 " endfunction
 "
+
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " Surround with {% raw %}content{% endraw %}
 nmap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
