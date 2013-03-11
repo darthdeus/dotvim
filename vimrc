@@ -21,6 +21,7 @@ Bundle "jimenezrick/vimerl"
 Bundle "elixir-lang/vim-elixir"
 Bundle "derekwyatt/vim-scala"
 Bundle "rodjek/vim-puppet"
+Bundle "darthdeus/vim-emblem"
 
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-fugitive"
