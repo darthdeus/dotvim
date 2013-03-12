@@ -256,9 +256,6 @@ function! RunFile()
    :w\|ruby%<CR>
 endfunction
 
-" It's not like we need Q anyway
-cmap Q q
-
 " For easier navigation between windows
 nmap <C-j> <C-w><C-j>
 nmap <C-k> <C-w><C-k>
