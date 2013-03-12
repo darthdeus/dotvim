@@ -33,7 +33,7 @@ Bundle "tpope/vim-rake"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-markdown"
 
-Bundle "honza/snipmate-snippets"
+Bundle "darthdeus/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "bbommarito/vim-slim"
