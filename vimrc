@@ -10,6 +10,7 @@ call vundle#rc()
 
 Bundle "gmarik/vundle"
 Bundle "wikitopian/hardmode"
+Bundle "benmills/vimux"
 
 Bundle "mileszs/ack.vim"
 Bundle "pangloss/vim-javascript"
