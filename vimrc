@@ -11,6 +11,7 @@ call vundle#rc()
 Bundle "gmarik/vundle"
 Bundle "wikitopian/hardmode"
 Bundle "benmills/vimux"
+let g:VimuxOrientation = "h"
 
 Bundle "mileszs/ack.vim"
 Bundle "pangloss/vim-javascript"
