@@ -99,6 +99,7 @@ set mouse=niv
 set hlsearch
 set incsearch
 " Make searches case-sensitive only if they contain upper-case characters
+set ignorecase
 set smartcase
 
 " Make tab completion for files/buffers act like bash
