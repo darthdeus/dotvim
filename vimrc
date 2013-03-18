@@ -216,7 +216,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
 map <leader>v :view %%
 " open file in a tab
-map <Leader>te :tabe %%
+" map <Leader>te :tabe %%
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
