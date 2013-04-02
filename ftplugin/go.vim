@@ -1,4 +1,4 @@
-autocmd BufWritePre *.go :Fmt
+" autocmd BufWritePre *.go :Fmt
 set noexpandtab
 set softtabstop=4
 set shiftwidth=4

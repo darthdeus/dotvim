@@ -60,11 +60,6 @@ Bundle "ZoomWin"
 
 filetype plugin indent on
 
-set tags+=gems.tags
-autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
-      \ pathogen#split(&tags) +
-      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
-
 " Include user's local pre .vimrc config
 if filereadable(expand("~/.vimrc.pre"))
   source ~/.vimrc.pre
@@ -90,6 +85,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+" Note that the dot is a unicode character
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
@@ -112,14 +108,14 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp
 " TODO - what is the default behavior?
 " Remap the tab key to do autocompletion or indentation depending on the
 " context (from http://www.vim.org/tips/tip.php?tip_id=102)
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
+" function! InsertTabWrapper()
+"     let col = col('.') - 1
+"     if !col || getline('.')[col - 1] !~ '\k'
+"         return "\<tab>"
+"     else
+"         return "\<c-p>"
+"     endif
+" endfunction
 
 " inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " inoremap <s-tab> <c-n>
@@ -149,12 +145,12 @@ let mapleader=","
 nnoremap <leader><leader> <c-^>
 
 " CTags
-map <leader>ct :!ctags --extra=+f -R *<CR>
-map <C-\> :tnext<CR>
+noremap <leader>ct :!ctags --extra=+f -R *<CR>
+noremap <C-\> :tnext<CR>
 
 nnoremap <CR> :nohlsearch<CR>/<BS>
 
-map <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
+noremap <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
 
 " Remember last location in file
 if has("autocmd")
@@ -192,13 +188,11 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.txt call s:setupWrapping()
 
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
-
 
 " Buffer resizing with arrow keys
 nnoremap <Up> <C-w>5-
@@ -210,65 +204,61 @@ nnoremap - :Switch<cr>
 
 " Expand %% to directory path of current buffer
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
-map <leader>e :edit %%
-map <leader>v :view %%
+noremap <leader>e :edit %%
+noremap <leader>v :view %%
 " open file in a tab
 " map <Leader>te :tabe %%
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 
 " Open files with <leader>f
-map <leader>f  :CommandTFlush<cr>\|:CommandT<CR>
+noremap <leader>f  :CommandTFlush<cr>\|:CommandT<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
-map <leader>F  :CommandTFlush<cr>\|:CommandT %%<CR>
-map <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
+noremap <leader>F  :CommandTFlush<cr>\|:CommandT %%<CR>
+noremap <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
 
 " Rails specific keystrokes
-map <leader>gr :topleft :split config/routes.rb<CR>
-map <leader>gg :topleft 50 :split Gemfile<CR>
+noremap <leader>gr :topleft :split config/routes.rb<CR>
+noremap <leader>gg :topleft 50 :split Gemfile<CR>
 
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT app/services<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
-map <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
-map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
-map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
+noremap <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+noremap <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+noremap <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+noremap <leader>gs :CommandTFlush<cr>\|:CommandT app/services<cr>
+noremap <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+noremap <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
+noremap <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+noremap <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
+noremap <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
+noremap <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+noremap <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
 
-map <leader>da :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
-map <leader>dv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
-map <leader>dc :CommandTFlush<cr>\|:CommandT app/assets/javascripts/controllers<cr>
-map <leader>dr :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
-map <leader>dm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
+noremap <leader>da :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
+noremap <leader>dv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
+noremap <leader>dc :CommandTFlush<cr>\|:CommandT app/assets/javascripts/controllers<cr>
+noremap <leader>dr :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
+noremap <leader>dm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
 
-nmap <C-a> ^
-nmap <C-e> $
-
-function! RunFile()
-   :w\|ruby%<CR>
-endfunction
+nnoremap <C-a> ^
+nnoremap <C-e> $
 
 " For easier navigation between windows
-nmap <C-j> <C-w><C-j>
-nmap <C-k> <C-w><C-k>
-nmap <C-h> <C-w><C-h>
-nmap <C-l> <C-w><C-l>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-l> <C-w><C-l>
 " Bubble multiple lines
-vmap <C-Up> <C-w><C-k>
-vmap <C-Down> <C-w><C-j>
-vmap <C-Left> <C-w><C-h>
-vmap <C-Right> <C-w><C-l>
+vnoremap <C-Up> <C-w><C-k>
+vnoremap <C-Down> <C-w><C-j>
+vnoremap <C-Left> <C-w><C-h>
+vnoremap <C-Right> <C-w><C-l>
 
-map <F1> <Esc>
+" fat fingers
+noremap <F1> <Esc>
 
-" TODO - learn these
 inoremap     <C-X><C-@> <C-A>
 " Emacs style mappings
 inoremap          <C-A> <C-O>^
@@ -298,13 +288,8 @@ noremap!          <M-u> <Esc>gUiw`]a
 noremap!          <M-{> <C-O>{
 noremap!          <M-}> <C-O>}
 
-" Need to investigate why this causes <Esc>b to stop working
-" if !has("gui_running")
-"   silent! exe "set <S-Left>=\<Esc>b"
-"   silent! exe "set <S-Right>=\<Esc>f"
-"   silent! exe "set <F31>=\<Esc>d"
-"   map! <F31> <M-d>
-" endif
+inoremap <c-u> <esc>viwUgi
+nnoremap <c-u> viwU
 
 nmap Q <NOP>
 
@@ -399,13 +384,6 @@ function! RunNearestTest()
     call RunTestFile(":" . spec_line_number)
 endfunction
 
-" User Makefile for node projects
-function s:setupMake()
-  nmap <leader>r :!make<CR>
-endfunction
-
-au BufNewFile,BufRead *.js,*.coffee call s:setupMake()
-
 " Run this file
 map <leader>t :call RunTestFile()<cr>
 " Run only the example under the cursor
@@ -423,67 +401,14 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-" Ruby autocomplete
-" http://www.cuberick.com/2008/10/ruby-autocomplete-in-vim.html
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"
-" au BufNewFile,BufRead *.ejs set filetype=html
-" set complete=.,b,u,]
-
 " TODO - pull request this into the main fish.vim repo
 au BufNewFile,BufRead *.fish set filetype=fish
 au BufNewFile,BufRead *.ejs set filetype=html
 
-" " plain annotations
-" map <silent> <F10> !xmpfilter -a<cr>
-" nmap <silent> <F10> V<F10>
-" imap <silent> <F10> <ESC><F10>a
-"
-" " Test::Unit assertions; use -s to generate RSpec expectations instead
-" map <silent> <S-F10> !xmpfilter -s<cr>
-" nmap <silent> <S-F10> V<S-F10>
-" imap <silent> <S-F10> <ESC><S-F10>a
-"
-" " Annotate the full buffer
-" " I actually prefer ggVG to %; it's a sort of poor man's visual bell
-" nmap <silent> <F11> mzggVG!xmpfilter -a<cr>'z
-" imap <silent> <F11> <ESC><F11>
-"
-" " assertions
-" nmap <silent> <S-F11> mzggVG!xmpfilter -u<cr>'z
-" imap <silent> <S-F11> <ESC><S-F11>a
-"
-" " Add # => markers
-" vmap <silent> <F12> !xmpfilter -m<cr>
-" nmap <silent> <F12> V<F12>
-" imap <silent> <F12> <ESC><F12>a
-"
-" " Remove # => markers
-" vmap <silent> <S-F12> ms:call RemoveRubyEval()<CR>
-" nmap <silent> <S-F12> V<S-F12>
-" imap <silent> <S-F12> <ESC><S-F12>a
-"
-" vmap <Leader>q Tab<CR>
-"
-" function! RemoveRubyEval() range
-"   let begv = a:firstline
-"   let endv = a:lastline
-"   normal Hmt
-"   set lz
-"   execute ":" . begv . "," . endv . 's/\s*# \(=>\|!!\).*$//e'
-"   normal 'tzt`s
-"   set nolz
-"   redraw
-" endfunction
-"
-
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " Surround with {% raw %}content{% endraw %}
-nmap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
+nnoremap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
 
 if has("user_commands")
   command! -bang -nargs=? -complete=file E e<bang> <args>
