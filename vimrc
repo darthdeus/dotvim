@@ -58,6 +58,12 @@ Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
 Bundle "ZoomWin"
 
+let g:haddock_browser="/usr/bin/firefox"
+Bundle "lukerandall/haskellmode-vim"
+" Bundle "eagletmt/ghcmod-vim"
+
+Bundle "wting/rust.vim"
+
 filetype plugin indent on
 
 " Include user's local pre .vimrc config
@@ -153,10 +159,11 @@ nnoremap <CR> :nohlsearch<CR>/<BS>
 noremap <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
 
 " Remember last location in file
-if has("autocmd")
+aug last_location
+  au!
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
-endif
+aug END
 
 " Save undo history
 if has('persistent_undo')
@@ -178,15 +185,23 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Hammer<CR>
 endfunction
 
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+aug various_file_types
+  au!
+  " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
-" md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+  " md, markdown, and mk are markdown and define buffer-local preview
+  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
-" add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
-au BufNewFile,BufRead *.txt call s:setupWrapping()
+  " add json syntax highlighting
+  au BufNewFile,BufRead *.json set filetype=javascript
+  au BufNewFile,BufRead *.txt call s:setupWrapping()
+
+  au BufNewFile,BufRead *.fish set filetype=fish
+  au BufNewFile,BufRead *.ejs set filetype=html
+
+  au BufRead,BufNewFile *.em set filetype=coffee
+aug END
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -288,6 +303,18 @@ noremap!          <M-u> <Esc>gUiw`]a
 noremap!          <M-{> <C-O>{
 noremap!          <M-}> <C-O>}
 
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <M-d>  <S-right><C-w>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <Esc>d <S-right><C-w>
+cnoremap <C-g>  <C-c>
+
 inoremap <c-u> <esc>viwUgi
 nnoremap <c-u> viwU
 
@@ -385,25 +412,21 @@ function! RunNearestTest()
 endfunction
 
 " Run this file
-map <leader>t :call RunTestFile()<cr>
+noremap <leader>t :call RunTestFile()<cr>
 " Run only the example under the cursor
-map <leader>T :call RunNearestTest()<cr>
+noremap <leader>T :call RunNearestTest()<cr>
 " Run all test files
-map <leader>a :call RunTests('spec')<cr>
+noremap <leader>a :call RunTests('spec')<cr>
 
 " remove unnecessary whitespaces
-map <leader>ws :%s/ *$//g<cr><c-o><cr>
+noremap <leader>ws :%s/ *$//g<cr><c-o><cr>
 
-map <F5> :!rake<cr>
+noremap <F5> :!rake<cr>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
-" TODO - pull request this into the main fish.vim repo
-au BufNewFile,BufRead *.fish set filetype=fish
-au BufNewFile,BufRead *.ejs set filetype=html
 
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
@@ -421,6 +444,16 @@ if has("user_commands")
   command! -bang QA qa<bang>
   command! -bang Qa qa<bang>
 endif
+
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+" inoremap {{     {
+inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+" inoremap ((     (
+inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 
 set exrc
 set secure
