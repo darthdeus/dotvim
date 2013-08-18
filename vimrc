@@ -104,6 +104,9 @@ set smartcase
 " Make tab completion for files/buffers act like bash
 set wildmenu
 
+" Relative line numbers
+set rnu
+
 set laststatus=0
 
 " TODO - how does this differ from "longest,list" only?
