@@ -43,7 +43,8 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "scrooloose/nerdtree"
 
 Bundle "krisajenkins/vim-projectlocal"
-Bundle "wincent/Command-T"
+" Bundle "wincent/Command-T"
+Bundle "kien/ctrlp.vim"
 Bundle "AndrewRadev/switch.vim"
 Bundle "tsaleh/vim-matchit"
 Bundle "skwp/vim-rspec"
@@ -238,33 +239,33 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 
 " Open files with <leader>f
-noremap <leader>f  :CommandTFlush<cr>\|:CommandT<CR>
+noremap <leader>f  :CtrlP<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
-noremap <leader>F  :CommandTFlush<cr>\|:CommandT %%<CR>
-noremap <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
+noremap <leader>F  :CtrlP %%<CR>
+noremap <leader>gf :CtrlP %%<CR>
 
 " Rails specific keystrokes
 noremap <leader>gr :topleft :split config/routes.rb<CR>
 noremap <leader>gg :topleft 50 :split Gemfile<CR>
 
-noremap <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-noremap <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-noremap <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-noremap <leader>gs :CommandTFlush<cr>\|:CommandT app/services<cr>
-noremap <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-noremap <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
-noremap <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-noremap <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
-noremap <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
-noremap <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
-noremap <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
-noremap <leader>ge :CommandTFlush<cr>\|:CommandT app/cells<cr>
+noremap <leader>gv :CtrlP app/views<cr>
+noremap <leader>gc :CtrlP app/controllers<cr>
+noremap <leader>gm :CtrlP app/models<cr>
+noremap <leader>gs :CtrlP app/services<cr>
+noremap <leader>gh :CtrlP app/helpers<cr>
+noremap <leader>gd :CtrlP app/decorators<cr>
+noremap <leader>gl :CtrlP lib<cr>
+noremap <leader>gt :CtrlP spec<cr>
+noremap <leader>gk :CtrlP app/assets/stylesheets<cr>
+noremap <leader>gj :CtrlP app/assets/javascripts<cr>
+noremap <leader>ga :CtrlP app/assets/javascripts/templates<cr>
+noremap <leader>ge :CtrlP app/cells<cr>
 
-noremap <leader>da :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
-noremap <leader>dv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
-noremap <leader>dc :CommandTFlush<cr>\|:CommandT app/assets/javascripts/controllers<cr>
-noremap <leader>dr :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
-noremap <leader>dm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
+noremap <leader>da :CtrlP app/assets/javascripts/templates<cr>
+noremap <leader>dv :CtrlP app/assets/javascripts/views<cr>
+noremap <leader>dc :CtrlP app/assets/javascripts/controllers<cr>
+noremap <leader>dr :CtrlP app/assets/javascripts/routes<cr>
+noremap <leader>dm :CtrlP app/assets/javascripts/models<cr>
 
 nnoremap <C-a> ^
 nnoremap <C-e> $
