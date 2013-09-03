@@ -38,7 +38,7 @@ Bundle "tpope/vim-markdown"
 Bundle "darthdeus/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "bbommarito/vim-slim"
+Bundle "slim-template/vim-slim"
 Bundle "kchmck/vim-coffee-script"
 Bundle "scrooloose/nerdtree"
 
@@ -58,11 +58,16 @@ Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
 Bundle "ZoomWin"
 
+Bundle "dag/vim2hs"
+" Bundle "scrooloose/syntastic"
+Bundle "bitc/vim-hdevtools"
+let g:hdevtools_options="-g -fdefer-type-errors"
+let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 let g:haddock_browser="/usr/bin/firefox"
-Bundle "lukerandall/haskellmode-vim"
-" Bundle "eagletmt/ghcmod-vim"
 
-Bundle "wting/rust.vim"
+" Enable syntastic syntax checking
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=1
 
 filetype plugin indent on
 
@@ -105,7 +110,7 @@ set smartcase
 set wildmenu
 
 " Relative line numbers
-set rnu
+" set rnu
 
 set laststatus=0
 
@@ -323,10 +328,6 @@ inoremap <c-u> <esc>viwUgi
 nnoremap <c-u> viwU
 
 nmap Q <NOP>
-
-" Enable syntastic syntax checking
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
 
 " gist-vim defaults
 if has("mac")
