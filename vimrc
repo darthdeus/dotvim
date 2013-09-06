@@ -44,7 +44,6 @@ Bundle "scrooloose/nerdtree"
 
 Bundle "krisajenkins/vim-projectlocal"
 Bundle "wincent/Command-T"
-" Bundle "kien/ctrlp.vim"
 Bundle "AndrewRadev/switch.vim"
 Bundle "tsaleh/vim-matchit"
 Bundle "skwp/vim-rspec"
@@ -59,12 +58,12 @@ Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
 Bundle "ZoomWin"
 
-Bundle "dag/vim2hs"
+" Bundle "dag/vim2hs"
 " Bundle "scrooloose/syntastic"
-Bundle "bitc/vim-hdevtools"
-let g:hdevtools_options="-g -fdefer-type-errors"
-let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
-let g:haddock_browser="/usr/bin/firefox"
+" Bundle "bitc/vim-hdevtools"
+" let g:hdevtools_options="-g -fdefer-type-errors"
+" let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
+" let g:haddock_browser="/usr/bin/firefox"
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -239,10 +238,10 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 
 " Open files with <leader>f
-noremap <leader>f  :CtrlP<CR>
+noremap <leader>f  :CommandTFlush<cr>\|:CommandT<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
-noremap <leader>F  :CtrlP %%<CR>
-noremap <leader>gf :CtrlP %%<CR>
+noremap <leader>F  :CommandTFlush<cr>\|:CommandT %%<CR>
+noremap <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
 
 " Rails specific keystrokes
 noremap <leader>gr :topleft :split config/routes.rb<CR>
