@@ -96,3 +96,16 @@ let g:syntastic_quiet_warnings=1
 let g:clang_format#code_style="google"
 
 set foldlevelstart=200
+
+" gist-vim defaults
+if has("mac")
+  let g:gist_clip_command = 'pbcopy'
+elseif has("unix")
+  let g:gist_clip_command = 'xclip -selection clipboard'
+endif
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_post_private = 1
+
+" Turn off jslint errors by default
+let g:JSLintHighlightErrorLine = 0

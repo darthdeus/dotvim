@@ -39,22 +39,9 @@ aug various_file_types
 
   au BufNewFile,BufRead *.thrift set filetype=thrift
 aug END
-"
+
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
-
-" gist-vim defaults
-if has("mac")
-  let g:gist_clip_command = 'pbcopy'
-elseif has("unix")
-  let g:gist_clip_command = 'xclip -selection clipboard'
-endif
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-let g:gist_post_private = 1
-
-" Turn off jslint errors by default
-let g:JSLintHighlightErrorLine = 0
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
