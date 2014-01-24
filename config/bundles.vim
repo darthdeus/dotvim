@@ -22,7 +22,6 @@ Bundle "darthdeus/vim-emblem"
 
 Bundle "wincent/Command-T"
 " Bundle "kien/ctrlp.vim"
-Bundle "Lokaltog/powerline"
 
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-fugitive"
@@ -64,7 +63,7 @@ Bundle "wting/rust.vim"
 
 Bundle "mattn/emmet-vim"
 
-" Bundle "scrooloose/syntastic"
+Bundle "scrooloose/syntastic"
 
 Bundle "dag/vim2hs"
 let g:haskell_conceal = 0
@@ -103,3 +102,5 @@ let g:gist_post_private = 1
 
 " Turn off jslint errors by default
 let g:JSLintHighlightErrorLine = 0
+
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell"] }
