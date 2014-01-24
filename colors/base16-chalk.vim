@@ -1,4 +1,4 @@
-" Base16 Default (https://github.com/chriskempson/base16)
+" Base16 Chalk (https://github.com/chriskempson/base16)
 " Scheme: Chris Kempson (http://chriskempson.com)
 
 " GUI color definitions
@@ -10,14 +10,14 @@ let s:gui04 = "b0b0b0"
 let s:gui05 = "d0d0d0"
 let s:gui06 = "e0e0e0"
 let s:gui07 = "f5f5f5"
-let s:gui08 = "ac4142"
-let s:gui09 = "d28445"
-let s:gui0A = "f4bf75"
-let s:gui0B = "90a959"
-let s:gui0C = "75b5aa"
-let s:gui0D = "6a9fb5"
-let s:gui0E = "aa759f"
-let s:gui0F = "8f5536"
+let s:gui08 = "fb9fb1"
+let s:gui09 = "eda987"
+let s:gui0A = "ddb26f"
+let s:gui0B = "acc267"
+let s:gui0C = "12cfc0"
+let s:gui0D = "6fc2ef"
+let s:gui0E = "e1a3ee"
+let s:gui0F = "deaf8f"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -49,7 +49,7 @@ endif
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-default"
+let g:colors_name = "base16-chalk"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)

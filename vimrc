@@ -25,6 +25,10 @@ Bundle "derekwyatt/vim-scala"
 Bundle "rodjek/vim-puppet"
 Bundle "darthdeus/vim-emblem"
 
+Bundle "wincent/Command-T"
+" Bundle "kien/ctrlp.vim"
+Bundle "Lokaltog/powerline"
+
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-rails"
@@ -43,7 +47,6 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "scrooloose/nerdtree"
 
 Bundle "krisajenkins/vim-projectlocal"
-Bundle "wincent/Command-T"
 Bundle "AndrewRadev/switch.vim"
 Bundle "tsaleh/vim-matchit"
 Bundle "skwp/vim-rspec"
@@ -58,16 +61,46 @@ Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
 Bundle "ZoomWin"
 
-" Bundle "dag/vim2hs"
+Bundle "rhysd/vim-clang-format"
+Bundle "kana/vim-operator-user"
+Bundle "Shougo/vimproc.vim"
+
+Bundle "wting/rust.vim"
+" Bundle "leafgarland/typescript-vim"
+Bundle "sprsquish/thrift.vim"
+
+" Bundle "tpope/vim-fireplace.git"
+" Bundle "tpope/vim-classpath.git"
+" Bundle "guns/vim-clojure-static"
+
+Bundle "mattn/emmet-vim"
+
 " Bundle "scrooloose/syntastic"
-" Bundle "bitc/vim-hdevtools"
-" let g:hdevtools_options="-g -fdefer-type-errors"
-" let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
+
+Bundle "dag/vim2hs"
+let g:haskell_conceal = 0
+let g:haskell_quasi         = 0
+let g:haskell_interpolation = 0
+let g:haskell_regex         = 0
+let g:haskell_jmacro        = 0
+let g:haskell_shqq          = 0
+let g:haskell_sql           = 0
+let g:haskell_json          = 0
+let g:haskell_xml           = 0
+let g:hpaste_author = "darthdeus"
+
+Bundle "bitc/vim-hdevtools"
+let g:hdevtools_options="-g -fdefer-type-errors"
+let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 " let g:haddock_browser="/usr/bin/firefox"
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
+
+let g:clang_format#code_style="google"
+
+set foldlevelstart=200
 
 filetype plugin indent on
 
@@ -117,7 +150,7 @@ set laststatus=0
 " TODO - how does this differ from "longest,list" only?
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp,project/target,target,tags
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp,project/target,target,tags,CMakeFiles,bower_components,dist,_darcs
 
 " TODO - what is the default behavior?
 " Remap the tab key to do autocompletion or indentation depending on the
@@ -161,6 +194,8 @@ nnoremap <leader><leader> <c-^>
 " CTags
 noremap <leader>ct :!ctags --extra=+f -R *<CR>
 noremap <C-\> :tnext<CR>
+
+set tags+=gems.tags
 
 nnoremap <CR> :nohlsearch<CR>/<BS>
 
@@ -208,7 +243,9 @@ aug various_file_types
   au BufNewFile,BufRead *.fish set filetype=fish
   au BufNewFile,BufRead *.ejs set filetype=html
 
-  au BufRead,BufNewFile *.em set filetype=coffee
+  au BufNewFile,BufRead *.em set filetype=coffee
+
+  au BufNewFile,BufRead *.thrift set filetype=thrift
 aug END
 
 " allow backspacing over everything in insert mode
@@ -343,8 +380,16 @@ let g:gist_post_private = 1
 set modeline
 set modelines=10
 
-color base16-default
+if has("gui_running")
+  color tomorrow
+  color tomorrow-night-eighties
+else
+  color base16-default
+  " color tomorrow-night-eighties
+end
+
 set bg=dark
+" set bg=light
 
 " Directories for swp files
 set backupdir=~/.vim/backup
@@ -366,15 +411,15 @@ set showcmd
 set guioptions-=L
 set guioptions-=r
 
-set guifont=Menlo:h12
+set guifont=Monaco\ for\ Powerline:h14
 
 if has("gui_running")
   " Automatically resize splits when resizing MacVim window
   autocmd VimResized * wincmd =
 
   " GRB: set window size"
-  :set lines=60
-  :set columns=140
+  :set lines=40
+  :set columns=120
 endif
 
 " Highlight current line
@@ -384,8 +429,8 @@ function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
     :silent !echo;echo;echo;echo;echo
-   exec ":!fish -c 'rspec " . a:filename . "'"
-   " exec ":!bundle exec rspec " . a:filename
+   " exec ":!fish -c 'rspec " . a:filename . "'"
+   exec ":!bundle exec rspec " . a:filename
    " exec ":!./script/test " . a:filename
 endfunction
 
@@ -426,7 +471,8 @@ noremap <leader>a :call RunTests('spec')<cr>
 " remove unnecessary whitespaces
 noremap <leader>ws :%s/ *$//g<cr><c-o><cr>
 
-noremap <F5> :!rake<cr>
+set pastetoggle=<F5>
+noremap <F6> :!rake<cr>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
@@ -450,6 +496,7 @@ if has("user_commands")
   command! -bang Qa qa<bang>
 endif
 
+" Automatic completion of ) and } for a given (
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 " inoremap {{     {
