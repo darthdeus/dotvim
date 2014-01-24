@@ -93,7 +93,6 @@ if has("gui_running")
   color tomorrow-night-eighties
 else
   color base16-default
-  " color tomorrow-night-eighties
 end
 
 set bg=dark
@@ -135,11 +134,11 @@ if has("gui_running")
   " Automatically resize splits when resizing MacVim window
   autocmd VimResized * wincmd =
 
-  " GRB: set window size"
-  :set lines=40
-  :set columns=120
+  set lines=40
+  set columns=120
 endif
 
 " Highlight current line
 set cursorline
 
+set tags+=gems.tags

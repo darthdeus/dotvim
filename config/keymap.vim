@@ -118,8 +118,6 @@ nnoremap <leader><leader> <c-^>
 noremap <leader>ct :!ctags --extra=+f -R *<CR>
 noremap <C-\> :tnext<CR>
 
-set tags+=gems.tags
-
 nnoremap <CR> :nohlsearch<CR>/<BS>
 
 noremap <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>

@@ -61,12 +61,6 @@ Bundle "kana/vim-operator-user"
 Bundle "Shougo/vimproc.vim"
 
 Bundle "wting/rust.vim"
-" Bundle "leafgarland/typescript-vim"
-Bundle "sprsquish/thrift.vim"
-
-" Bundle "tpope/vim-fireplace.git"
-" Bundle "tpope/vim-classpath.git"
-" Bundle "guns/vim-clojure-static"
 
 Bundle "mattn/emmet-vim"
 
