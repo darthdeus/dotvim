@@ -1,9 +1,9 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-if $SHELL =~ 'fish'
-  set shell=/bin/sh
-end
+" if $SHELL =~ 'fish'
+"   set shell=/bin/sh
+" end
 
 runtime config/bundles.vim
 runtime config/settings.vim

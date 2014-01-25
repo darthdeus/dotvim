@@ -1,6 +1,6 @@
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-set rtp+=/usr/local/opt/go/misc/vim
+set rtp+=/usr/local/opt/go/libexec/misc/vim
 call vundle#rc()
 
 Bundle "gmarik/vundle"
@@ -103,4 +103,4 @@ let g:gist_post_private = 1
 " Turn off jslint errors by default
 let g:JSLintHighlightErrorLine = 0
 
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell"] }
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go"] }
