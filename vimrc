@@ -56,7 +56,8 @@ function! RunTests(filename)
     :w
     :silent !echo;echo;echo;echo;echo
    " exec ":!fish -c 'rspec " . a:filename . "'"
-   exec ":!bundle exec rspec " . a:filename
+   " exec ":!bundle exec rspec " . a:filename
+   exec ":!zeus rspec " . a:filename
    " exec ":!./script/test " . a:filename
 endfunction
 
