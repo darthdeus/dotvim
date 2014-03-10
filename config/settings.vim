@@ -88,15 +88,20 @@ let mapleader=","
 set modeline
 set modelines=10
 
-if has("gui_running")
-  color tomorrow
-  color tomorrow-night-eighties
-else
-  color base16-default
-end
+set t_Co=256
+" set bg=dark
+set bg=light
 
-set bg=dark
-" set bg=light
+" if has("gui_running")
+"   color tomorrow
+"   color tomorrow-night-eighties
+" else
+"   color base16-default
+" end
+
+color Tomorrow-Night-Bright
+" color base16-default
+
 
 " Directories for swp files
 set backupdir=~/.vim/backup

@@ -55,9 +55,9 @@ Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
 Bundle "ZoomWin"
 
+let g:clang_format#code_style="llvm"
 Bundle "rhysd/vim-clang-format"
 Bundle "kana/vim-operator-user"
-Bundle "Shougo/vimproc.vim"
 
 Bundle "wting/rust.vim"
 
@@ -84,9 +84,8 @@ let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_messages=1
 
-let g:clang_format#code_style="google"
 
 set foldlevelstart=200
 
