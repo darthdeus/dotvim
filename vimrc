@@ -92,7 +92,7 @@ let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages=1
+" let g:syntastic_quiet_messages=1
 
 
 set foldlevelstart=200
@@ -246,8 +246,9 @@ set showcmd
 " Remove scrollbars
 set guioptions-=L
 set guioptions-=r
+set guioptions-=T
 
-set guifont=Monaco\ for\ Powerline:h14
+" set guifont=Monaco\ for\ Powerline:h14
 
 if has("gui_running")
   " Automatically resize splits when resizing MacVim window
@@ -287,29 +288,6 @@ noremap <leader>f  :CommandTFlush<cr>\|:CommandT<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
 noremap <leader>F  :CommandTFlush<cr>\|:CommandT %%<CR>
 noremap <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
-
-" Rails specific keystrokes
-noremap <leader>gr :topleft :split config/routes.rb<CR>
-noremap <leader>gg :topleft 50 :split Gemfile<CR>
-
-noremap <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-noremap <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-noremap <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-noremap <leader>gs :CommandTFlush<cr>\|:CommandT app/services<cr>
-noremap <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-noremap <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
-noremap <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-noremap <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
-noremap <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
-noremap <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
-noremap <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
-noremap <leader>ge :CommandTFlush<cr>\|:CommandT app/cells<cr>
-
-noremap <leader>da :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
-noremap <leader>dv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
-noremap <leader>dc :CommandTFlush<cr>\|:CommandT app/assets/javascripts/controllers<cr>
-noremap <leader>dr :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
-noremap <leader>dm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
 
 nnoremap <C-a> ^
 nnoremap <C-e> $
