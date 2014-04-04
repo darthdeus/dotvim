@@ -22,14 +22,9 @@ Bundle "tomtom/tcomment_vim"
 Bundle "tomtom/tlib_vim"
 Bundle "godlygeek/tabular"
 Bundle "pangloss/vim-javascript"
-Bundle "jimenezrick/vimerl"
-Bundle "elixir-lang/vim-elixir"
-Bundle "derekwyatt/vim-scala"
 Bundle "rodjek/vim-puppet"
-Bundle "darthdeus/vim-emblem"
 
 Bundle "wincent/Command-T"
-" Bundle "kien/ctrlp.vim"
 
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-fugitive"
@@ -56,8 +51,6 @@ Bundle "mattn/gist-vim"
 Bundle "mattn/webapi-vim"
 
 Bundle "mattn/zencoding-vim"
-Bundle "nono/vim-handlebars"
-Bundle "aliva/vim-fish"
 
 Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
