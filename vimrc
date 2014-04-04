@@ -81,13 +81,15 @@ let g:haskell_xml           = 0
 let g:hpaste_author = "darthdeus"
 
 Bundle "bitc/vim-hdevtools"
-let g:hdevtools_options="-g -fdefer-type-errors"
+let g:hdevtools_options="-g -fdefer-type-errors -g-isrc"
+" let g:hdevtools_options = '-g-isrc -g-Wall'
 let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 " let g:haddock_browser="/usr/bin/firefox"
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 " let g:syntastic_quiet_messages=1
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp"] }
 
 
 set foldlevelstart=200
@@ -104,8 +106,6 @@ let g:gist_post_private = 1
 
 " Turn off jslint errors by default
 let g:JSLintHighlightErrorLine = 0
-
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go"] }
 
 filetype plugin indent on
 
