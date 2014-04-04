@@ -50,6 +50,8 @@ Bundle "skwp/vim-rspec"
 Bundle "mattn/gist-vim"
 Bundle "mattn/webapi-vim"
 
+Bundle "kurko/autocoder.vim"
+Bundle "ecomba/vim-ruby-refactoring"
 Bundle "mattn/zencoding-vim"
 
 Bundle "sjl/gundo.vim"
