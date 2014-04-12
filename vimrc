@@ -86,6 +86,9 @@ let g:hdevtools_options="-g -fdefer-type-errors -g-isrc"
 let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 " let g:haddock_browser="/usr/bin/firefox"
 
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 " let g:syntastic_quiet_messages=1
@@ -186,9 +189,9 @@ set winwidth=100
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight set will
 " fail.
-set winheight=5
-set winminheight=5
-set winheight=999
+" set winheight=5
+" set winminheight=5
+" set winheight=999
 
 " Change the leader to ","
 let mapleader=","
@@ -209,6 +212,7 @@ set bg=dark
 " end
 
 " color Tomorrow-Night-Bright
+let base16colorspace=256  " Access colors present in 256 colorspace
 color base16-default
 
 
@@ -283,6 +287,29 @@ noremap <leader>f  :CommandTFlush<cr>\|:CommandT<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
 noremap <leader>F  :CommandTFlush<cr>\|:CommandT %%<CR>
 noremap <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
+
+" Rails specific keystrokes
+noremap <leader>gr :topleft :split config/routes.rb<CR>
+noremap <leader>gg :topleft 50 :split Gemfile<CR>
+
+noremap <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+noremap <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+noremap <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+noremap <leader>gs :CommandTFlush<cr>\|:CommandT app/services<cr>
+noremap <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+noremap <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
+noremap <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+noremap <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
+noremap <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
+noremap <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+noremap <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
+noremap <leader>ge :CommandTFlush<cr>\|:CommandT app/cells<cr>
+
+noremap <leader>da :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
+noremap <leader>dv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
+noremap <leader>dc :CommandTFlush<cr>\|:CommandT app/assets/javascripts/controllers<cr>
+noremap <leader>dr :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
+noremap <leader>dm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
 
 nnoremap <C-a> ^
 nnoremap <C-e> $
