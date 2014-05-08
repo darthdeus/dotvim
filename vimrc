@@ -71,11 +71,13 @@ Bundle "mattn/emmet-vim"
 Bundle "scrooloose/syntastic"
 Bundle "dag/vim2hs"
 
-" Plugin "Shougo/neocomplete.vim"
-" let g:neocomplete#enable_at_startup = 1
-" Plugin "Valloric/YouCompleteMe"
+Bundle "Valloric/YouCompleteMe"
 
-Plugin "pbrisbin/html-template-syntax"
+Bundle "pbrisbin/html-template-syntax"
+
+" Bundle "Shougo/neocomplete.vim"
+" let g:neocomplete#enable_at_startup = 1
+" Bundle "eagletmt/neco-ghc"
 
 let g:haskell_conceal = 0
 let g:haskell_quasi         = 1
@@ -88,7 +90,7 @@ let g:haskell_json          = 0
 let g:haskell_xml           = 0
 let g:hpaste_author = "darthdeus"
 
-" Plugin "bitc/vim-hdevtools"
+" Bundle "bitc/vim-hdevtools"
 " let g:hdevtools_options="-g -fdefer-type-errors -g-isrc"
 " let g:hdevtools_options = '-g-isrc -g-Wall'
 let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
