@@ -1,4 +1,20 @@
-Install via
+# Installation
+
+First you're going to need to clone this repository to `~/.vim`
+
+    git clone https://github.com/darthdeus/dotvim ~/.vim
+
+Symlink the `vimrc`
 
     ln -s ~/.vim/vimrc  ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
+
+Install the bundle
+
+    vim +:BundleInstall
+
+**And enjoy the uber experience these dotfiles provide.**
+
+# Contributing
+
+There are definitely many things that can be improved. If you can think
+of anything, don't hesitate to open an issue or make a pull request.
