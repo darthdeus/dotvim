@@ -161,7 +161,7 @@ set laststatus=0
 " TODO - how does this differ from "longest,list" only?
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp,project/target,target,tags,CMakeFiles,bower_components,dist,_darcs,vcr
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp,project/target,target,tags,CMakeFiles,bower_components,dist,_darcs,vcr,app/assets/images
 
 " TODO - what is the default behavior?
 " Remap the tab key to do autocompletion or indentation depending on the
