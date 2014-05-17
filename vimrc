@@ -63,15 +63,14 @@ let g:clang_format#code_style="llvm"
 Bundle "rhysd/vim-clang-format"
 Bundle "kana/vim-operator-user"
 
-Bundle "wting/rust.vim"
-
 Bundle "mattn/emmet-vim"
-
 Bundle "scrooloose/syntastic"
-
 Bundle "dag/vim2hs"
+
+Bundle "pbrisbin/html-template-syntax"
+
 let g:haskell_conceal = 0
-let g:haskell_quasi         = 0
+let g:haskell_quasi         = 1
 let g:haskell_interpolation = 0
 let g:haskell_regex         = 0
 let g:haskell_jmacro        = 0
