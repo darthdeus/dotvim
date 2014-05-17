@@ -17,6 +17,9 @@ Bundle "wikitopian/hardmode"
 Bundle "benmills/vimux"
 let g:VimuxOrientation = "h"
 
+Bundle "idris-hackers/idris-vim"
+Bundle "altercation/vim-colors-solarized"
+
 Bundle "rking/ag.vim"
 
 Bundle "pangloss/vim-javascript"
