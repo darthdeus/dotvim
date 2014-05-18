@@ -72,6 +72,10 @@ Bundle "mattn/emmet-vim"
 Bundle "scrooloose/syntastic"
 Bundle "dag/vim2hs"
 
+" Bundle "Shougo/neocomplete.vim"
+" let g:neocomplete#enable_at_startup = 1
+Bundle "Valloric/YouCompleteMe"
+
 Bundle "pbrisbin/html-template-syntax"
 
 let g:haskell_conceal = 0
