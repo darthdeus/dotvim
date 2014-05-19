@@ -93,6 +93,7 @@ let g:hpaste_author = "darthdeus"
 " let g:hdevtools_options="-g -fdefer-type-errors -g-isrc"
 " let g:hdevtools_options = '-g-isrc -g-Wall'
 let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
+" let g:syntastic_haskell_checkers = ['hlint']
 " let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 " let g:haddock_browser="/usr/bin/firefox"
 
@@ -502,7 +503,16 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+" nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" Type of expression under cursor
+nmap <silent> <leader>ht :GhcModType<CR>
+" Insert type of expression under cursor
+nmap <silent> <leader>hT :GhcModTypeInsert<CR>
+" GHC errors and warnings
+nmap <silent> <leader>c :GhcModCheckAsync<CR>
+" Haskell Lint
+nmap <silent> <leader>hl :GhcModLintAsync<CR>
 
 " Surround with {% raw %}content{% endraw %}
 nnoremap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
