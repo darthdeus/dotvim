@@ -52,7 +52,7 @@ Bundle "skwp/vim-rspec"
 Bundle "mattn/gist-vim"
 Bundle "mattn/webapi-vim"
 
-Bundle "kurko/smartest.vim.git"
+Bundle "darthdeus/smartest.vim"
 Bundle "kurko/autocoder.vim"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "mattn/zencoding-vim"
@@ -208,18 +208,10 @@ set modelines=10
 
 set t_Co=256
 set bg=dark
-" set bg=light
 
-" if has("gui_running")
-"   color tomorrow
-"   color tomorrow-night-eighties
-" else
-"   color base16-default
-" end
-
-" color Tomorrow-Night-Bright
 let base16colorspace=256  " Access colors present in 256 colorspace
 color base16-default
+" color Tomorrow-Night-Bright
 
 
 " Directories for swp files
@@ -253,12 +245,14 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=T
 
-" set guifont=Monaco\ for\ Powerline:h14
+set guifont=Monaco\ for\ Powerline:h14
 
 if has("gui_running")
   " Automatically resize splits when resizing MacVim window
   autocmd VimResized * wincmd =
 
+  set vb
+  " color Tomorrow-Night
   set lines=40
   set columns=120
 endif
@@ -488,7 +482,7 @@ noremap <leader>t :call RunTestFile()<cr>
 " Run only the example under the cursor
 noremap <leader>T :call RunNearestTest()<cr>
 " Run all test files
-noremap <leader>a :call RunTests('spec')<cr>
+noremap <leader>a :!zeus rspec spec<cr>
 
 " remove unnecessary whitespaces
 noremap <leader>ws :%s/ *$//g<cr><c-o><cr>
