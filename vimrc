@@ -12,70 +12,70 @@ set rtp+=~/.vim/bundle/vundle/
 set rtp+=/usr/local/opt/go/libexec/misc/vim
 call vundle#rc()
 
-Bundle "gmarik/vundle"
-Bundle "wikitopian/hardmode"
-Bundle "benmills/vimux"
+Plugin "gmarik/vundle"
+Plugin "wikitopian/hardmode"
+Plugin "benmills/vimux"
 let g:VimuxOrientation = "h"
 
-Bundle "idris-hackers/idris-vim"
-Bundle "altercation/vim-colors-solarized"
+Plugin "idris-hackers/idris-vim"
+Plugin "altercation/vim-colors-solarized"
 
-Bundle "rking/ag.vim"
+Plugin "rking/ag.vim"
 
-Bundle "tomtom/tcomment_vim"
-Bundle "tomtom/tlib_vim"
-Bundle "godlygeek/tabular"
-Bundle "pangloss/vim-javascript"
-Bundle "rodjek/vim-puppet"
+Plugin "tomtom/tcomment_vim"
+Plugin "tomtom/tlib_vim"
+Plugin "godlygeek/tabular"
+Plugin "pangloss/vim-javascript"
+Plugin "rodjek/vim-puppet"
 
-Bundle "wincent/Command-T"
+Plugin "wincent/Command-T"
 
-Bundle "tpope/vim-bundler"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-eunuch"
-Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-rake"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-markdown"
+Plugin "tpope/vim-bundler"
+Plugin "tpope/vim-fugitive"
+Plugin "tpope/vim-rails"
+Plugin "tpope/vim-eunuch"
+Plugin "tpope/vim-endwise"
+Plugin "tpope/vim-surround"
+Plugin "tpope/vim-rake"
+Plugin "tpope/vim-repeat"
+Plugin "tpope/vim-markdown"
 
-Bundle "darthdeus/snipmate-snippets"
-Bundle "garbas/vim-snipmate"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "slim-template/vim-slim"
-Bundle "kchmck/vim-coffee-script"
-Bundle "scrooloose/nerdtree"
+Plugin "darthdeus/snipmate-snippets"
+Plugin "garbas/vim-snipmate"
+Plugin "MarcWeber/vim-addon-mw-utils"
+Plugin "slim-template/vim-slim"
+Plugin "kchmck/vim-coffee-script"
+Plugin "scrooloose/nerdtree"
 
-Bundle "krisajenkins/vim-projectlocal"
-Bundle "AndrewRadev/switch.vim"
-Bundle "eshock/vim-matchit"
-Bundle "skwp/vim-rspec"
-Bundle "mattn/gist-vim"
-Bundle "mattn/webapi-vim"
+Plugin "krisajenkins/vim-projectlocal"
+Plugin "AndrewRadev/switch.vim"
+Plugin "eshock/vim-matchit"
+Plugin "skwp/vim-rspec"
+Plugin "mattn/gist-vim"
+Plugin "mattn/webapi-vim"
 
-Bundle "darthdeus/smartest.vim"
-Bundle "kurko/autocoder.vim"
-Bundle "ecomba/vim-ruby-refactoring"
-Bundle "mattn/zencoding-vim"
+Plugin "darthdeus/smartest.vim"
+Plugin "kurko/autocoder.vim"
+Plugin "ecomba/vim-ruby-refactoring"
+Plugin "mattn/zencoding-vim"
 
-Bundle "sjl/gundo.vim"
-Bundle "othree/html5.vim"
-Bundle "ZoomWin"
+Plugin "sjl/gundo.vim"
+Plugin "othree/html5.vim"
+Plugin "ZoomWin"
 
 let g:clang_format#code_style="llvm"
-Bundle "rhysd/vim-clang-format"
-Bundle "kana/vim-operator-user"
+Plugin "rhysd/vim-clang-format"
+Plugin "kana/vim-operator-user"
 
-Bundle "mattn/emmet-vim"
-Bundle "scrooloose/syntastic"
-Bundle "dag/vim2hs"
+Plugin "mattn/emmet-vim"
+Plugin "scrooloose/syntastic"
+Plugin "dag/vim2hs"
 
-" Bundle "Shougo/neocomplete.vim"
+" Plugin "Shougo/neocomplete.vim"
 " let g:neocomplete#enable_at_startup = 1
-" Bundle "Valloric/YouCompleteMe"
+" Plugin "Valloric/YouCompleteMe"
 
-Bundle "pbrisbin/html-template-syntax"
+Plugin "pbrisbin/html-template-syntax"
 
 let g:haskell_conceal = 0
 let g:haskell_quasi         = 1
@@ -88,7 +88,7 @@ let g:haskell_json          = 0
 let g:haskell_xml           = 0
 let g:hpaste_author = "darthdeus"
 
-" Bundle "bitc/vim-hdevtools"
+" Plugin "bitc/vim-hdevtools"
 " let g:hdevtools_options="-g -fdefer-type-errors -g-isrc"
 " let g:hdevtools_options = '-g-isrc -g-Wall'
 let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
@@ -96,8 +96,8 @@ let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
 " let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 " let g:haddock_browser="/usr/bin/firefox"
 
-Bundle "eagletmt/ghcmod-vim"
-Bundle "Shougo/vimproc.vim"
+Plugin "eagletmt/ghcmod-vim"
+Plugin "Shougo/vimproc.vim"
 
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
