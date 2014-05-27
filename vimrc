@@ -22,7 +22,6 @@ Bundle "altercation/vim-colors-solarized"
 
 Bundle "rking/ag.vim"
 
-Bundle "pangloss/vim-javascript"
 Bundle "tomtom/tcomment_vim"
 Bundle "tomtom/tlib_vim"
 Bundle "godlygeek/tabular"
