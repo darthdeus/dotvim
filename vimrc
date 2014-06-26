@@ -107,7 +107,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 " let g:syntastic_quiet_messages=1
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp"] }
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp", "idris"] }
 
 
 set foldlevelstart=200
