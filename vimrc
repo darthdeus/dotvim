@@ -434,6 +434,8 @@ aug various_file_types
   au BufNewFile,BufRead *.em set filetype=coffee
 
   au BufNewFile,BufRead *.thrift set filetype=thrift
+
+  au BufNewFile,BufRead *.purs set syntax=haskell
 aug END
 
 " load the plugin and indent settings for the detected filetype
