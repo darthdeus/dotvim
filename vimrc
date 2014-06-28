@@ -93,8 +93,8 @@ let g:hpaste_author = "darthdeus"
 " Bundle "bitc/vim-hdevtools"
 " let g:hdevtools_options="-g -fdefer-type-errors -g-isrc"
 " let g:hdevtools_options = '-g-isrc -g-Wall'
-" let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
-let g:syntastic_haskell_checkers = ['hlint']
+let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
+" let g:syntastic_haskell_checkers = ['hlint']
 " let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 " let g:haddock_browser="/usr/bin/firefox"
 
