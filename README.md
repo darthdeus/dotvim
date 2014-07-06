@@ -6,7 +6,7 @@ First you're going to need to clone this repository to `~/.vim`
 
 Symlink the `vimrc`
 
-    ln -s ~/.vim/vimrc  ~/.vimrc
+    ln -nsf ~/.vim/vimrc ~/.vimrc
 
 Install the bundle
 
