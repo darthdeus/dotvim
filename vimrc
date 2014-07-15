@@ -96,7 +96,6 @@ let g:hpaste_author = "darthdeus"
 let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
 " let g:syntastic_haskell_checkers = ['hlint']
 " let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
-" let g:haddock_browser="/usr/bin/firefox"
 
 Bundle "eagletmt/ghcmod-vim"
 Bundle "Shougo/vimproc.vim"
