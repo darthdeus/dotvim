@@ -3,10 +3,6 @@ set nocompatible
 
 set shell=sh
 
-" if $SHELL =~ 'fish'
-"   set shell=/bin/sh
-" end
-
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 set rtp+=/usr/local/opt/go/libexec/misc/vim
