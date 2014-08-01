@@ -512,9 +512,6 @@ nmap <silent> <leader>c :GhcModCheckAsync<CR>
 " Haskell Lint
 nmap <silent> <leader>hl :GhcModLintAsync<CR>
 
-" Surround with {% raw %}content{% endraw %}
-nnoremap <Leader>swr c2f}{% raw %}<ESC>pa{% endraw %}<ESC>
-
 if has("user_commands")
   command! -bang -nargs=? -complete=file E e<bang> <args>
   command! -bang -nargs=? -complete=file W w<bang> <args>
