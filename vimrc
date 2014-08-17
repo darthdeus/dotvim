@@ -99,7 +99,9 @@ Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
 Bundle "ZoomWin"
 
-let g:clang_format#code_style="llvm"
+Bundle "wting/rust.vim"
+
+" let g:clang_format#code_style="llvm"
 Bundle "rhysd/vim-clang-format"
 Bundle "kana/vim-operator-user"
 
@@ -108,6 +110,7 @@ Bundle "scrooloose/syntastic"
 Bundle "dag/vim2hs"
 
 Bundle "Valloric/YouCompleteMe"
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
 Bundle "pbrisbin/html-template-syntax"
 
@@ -129,20 +132,23 @@ let g:hpaste_author = "darthdeus"
 " Bundle "bitc/vim-hdevtools"
 " let g:hdevtools_options="-g -fdefer-type-errors -g-isrc"
 " let g:hdevtools_options = '-g-isrc -g-Wall'
-let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
+" let g:syntastic_haskell_checkers = ['ghc_mod', 'hlint']
 " let g:syntastic_haskell_checkers = ['hlint']
-" let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
+let g:syntastic_haskell_checkers = ['hdevtools']
 
-Bundle "eagletmt/ghcmod-vim"
+" Bundle "eagletmt/ghcmod-vim"
 Bundle "Shougo/vimproc.vim"
 
 let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options = ' -std=c++1y -stdlib=libc++'
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
+
+let g:syntastic_cpp_check_header = 0
+"
 " let g:syntastic_quiet_messages=1
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp", "idris"] }
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp", "idris", "rust"] }
 
 
 set foldlevelstart=200
@@ -535,6 +541,11 @@ noremap <leader>ws :%s/ *$//g<cr><c-o><cr>
 
 set pastetoggle=<F5>
 noremap <F6> :!rake<cr>
+
+set mouse=a
+
+autocmd FileType c,cpp,objc nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><C-e> :ClangFormat<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
