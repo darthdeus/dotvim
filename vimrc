@@ -8,6 +8,8 @@ set rtp+=~/.vim/bundle/vundle/
 set rtp+=/usr/local/opt/go/libexec/misc/vim
 call vundle#rc()
 
+Bundle "vim-scripts/a.vim"
+
 Bundle "gmarik/vundle"
 Bundle "wikitopian/hardmode"
 Bundle "benmills/vimux"
@@ -110,7 +112,9 @@ Bundle "scrooloose/syntastic"
 Bundle "dag/vim2hs"
 
 Bundle "Valloric/YouCompleteMe"
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_extra_conf_globlist = ['*']
 
 Bundle "pbrisbin/html-template-syntax"
 
@@ -214,7 +218,7 @@ set laststatus=0
 " TODO - how does this differ from "longest,list" only?
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp,project/target,target,tags,CMakeFiles,bower_components,dist,_darcs,vcr,app/assets/images
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp,project/target,target,tags,CMakeFiles,bower_components,dist,_darcs,vcr,app/assets/images,*.dSYM,*.pyc
 
 " TODO - what is the default behavior?
 " Remap the tab key to do autocompletion or indentation depending on the
@@ -241,7 +245,8 @@ set laststatus=2
 " This is likely a bludgeon to solve some other issue, but it works
 " set noequalalways
 
-set winwidth=100
+" set winwidth=100
+set winwidth=75
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight set will
 " fail.
