@@ -16,7 +16,6 @@ Bundle "benmills/vimux"
 let g:VimuxOrientation = "h"
 
 Bundle "idris-hackers/idris-vim"
-Bundle "altercation/vim-colors-solarized"
 
 Bundle "rking/ag.vim"
 
@@ -266,11 +265,11 @@ set bg=dark
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 
-if $COLORTERM == 'gnome-terminal'
-  color Tomorrow-Night-Bright
-else
+" if $COLORTERM == 'gnome-terminal'
+"   color Tomorrow-Night-Bright
+" else
   color base16-default
-endif
+" endif
 
 " Directories for swp files
 set backupdir=~/.vim/backup
