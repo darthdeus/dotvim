@@ -426,8 +426,6 @@ aug various_file_types
   au BufNewFile,BufRead *.txt call s:setupWrapping()
 
   au BufNewFile,BufRead *.fish set filetype=fish
-  au BufNewFile,BufRead *.ejs set filetype=html
-
   au BufNewFile,BufRead *.conf set filetype=conf
 aug END
 
