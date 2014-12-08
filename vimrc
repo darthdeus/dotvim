@@ -440,7 +440,6 @@ endfunction
 
 function s:setupMarkup()
   call s:setupWrapping()
-  map <buffer> <Leader>p :Hammer<CR>
 endfunction
 
 aug various_file_types
