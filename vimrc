@@ -420,7 +420,6 @@ nnoremap <c-u> viwU
 " Disable accidental ex mode
 nmap Q <NOP>
 
-
 " Switching between active files in a buffer.
 nnoremap <leader><leader> <c-^>
 
