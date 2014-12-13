@@ -414,9 +414,6 @@ cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><C-w>
 cnoremap <C-g>  <C-c>
 
-inoremap <c-u> <esc>viwUgi
-nnoremap <c-u> viwU
-
 " Disable accidental ex mode
 nmap Q <NOP>
 
