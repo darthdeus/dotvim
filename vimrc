@@ -476,8 +476,6 @@ noremap <leader>a :!zeus rspec spec<cr>
 noremap <leader>ws :%s/ *$//g<cr><c-o><cr>
 
 set pastetoggle=<F5>
-noremap <F6> :!rake<cr>
-
 set mouse=a
 
 autocmd FileType c,cpp,objc nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
