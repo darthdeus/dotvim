@@ -314,9 +314,6 @@ cnoremap %% <C-R>=expand('%:h').'/'<CR>
 nnoremap <leader>e :call VimuxRunCommand("make")<cr>
 nnoremap <leader>v :view %%
 
-" open file in a tab
-" map <Leader>te :tabe %%
-
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
