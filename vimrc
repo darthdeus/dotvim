@@ -9,8 +9,6 @@ set rtp+=/usr/local/opt/go/libexec/misc/vim
 call vundle#rc()
 
 Bundle "vim-scripts/a.vim"
-Bundle "lambdatoast/elm.vim"
-
 Bundle "gmarik/vundle"
 Bundle "wikitopian/hardmode"
 Bundle "benmills/vimux"
