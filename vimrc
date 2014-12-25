@@ -20,7 +20,6 @@ Bundle "tomtom/tcomment_vim"
 Bundle "tomtom/tlib_vim"
 Bundle "godlygeek/tabular"
 Bundle "pangloss/vim-javascript"
-Bundle "rodjek/vim-puppet"
 
 Bundle "wincent/Command-T"
 
