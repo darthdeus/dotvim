@@ -33,9 +33,6 @@ Bundle "tpope/vim-rake"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-markdown"
 
-" Bundle "darthdeus/snipmate-snippets"
-" Bundle "garbas/vim-snipmate"
-
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 
