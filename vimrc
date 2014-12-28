@@ -34,8 +34,8 @@ Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-markdown"
 
 " Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plugin "SirVer/ultisnips"
+Plugin "honza/vim-snippets"
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-j>"
