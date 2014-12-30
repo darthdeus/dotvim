@@ -86,7 +86,6 @@ Bundle "mattn/zencoding-vim"
 
 Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
-Bundle "ZoomWin"
 
 Bundle "wting/rust.vim"
 
@@ -211,11 +210,6 @@ command! W :w
 
 " Status bar
 set laststatus=2
-
-" Without setting this, ZoomWin restores windows in a way that causes
-" equalalways behavior to be triggered the next time CommandT is used.
-" This is likely a bludgeon to solve some other issue, but it works
-" set noequalalways
 
 " set winwidth=100
 set winwidth=75
