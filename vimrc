@@ -87,7 +87,6 @@ Bundle "mattn/zencoding-vim"
 Bundle "sjl/gundo.vim"
 Bundle "othree/html5.vim"
 
-" let g:clang_format#code_style="llvm"
 Bundle "rhysd/vim-clang-format"
 Bundle "kana/vim-operator-user"
 
