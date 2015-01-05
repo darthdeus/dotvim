@@ -117,10 +117,6 @@ let g:ycm_extra_conf_globlist = ['*']
 
 Bundle "pbrisbin/html-template-syntax"
 
-" Bundle "Shougo/neocomplete.vim"
-" let g:neocomplete#enable_at_startup = 1
-" Bundle "eagletmt/neco-ghc"
-
 let g:haskell_conceal = 0
 let g:haskell_quasi         = 1
 let g:haskell_interpolation = 0
