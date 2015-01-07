@@ -130,7 +130,6 @@ let g:hpaste_author = "darthdeus"
 
 let g:syntastic_haskell_checkers = ['hdevtools']
 
-" Bundle "eagletmt/ghcmod-vim"
 Bundle "Shougo/vimproc.vim"
 
 let g:syntastic_cpp_compiler = 'clang++'
