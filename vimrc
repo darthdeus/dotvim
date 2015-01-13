@@ -550,8 +550,6 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-" nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-
 " Type of expression under cursor
 nmap <silent> <leader>ht :GhcModType<CR>
 " Insert type of expression under cursor
