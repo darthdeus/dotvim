@@ -574,12 +574,10 @@ endif
 " Automatic completion of ) and } for a given (
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
-" inoremap {{     {
 inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 
 inoremap (      ()<Left>
 inoremap (<CR>  (<CR>)<Esc>O
-" inoremap ((     (
 inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 
 set exrc
