@@ -329,7 +329,8 @@ nnoremap - :Switch<cr>
 
 " Expand %% to directory path of current buffer
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
-noremap <leader>e :edit %%
+nnoremap <leader>e :call VimuxRunCommand("make")<cr>
+" noremap <leader>e :edit %%
 noremap <leader>v :view %%
 " open file in a tab
 " map <Leader>te :tabe %%
