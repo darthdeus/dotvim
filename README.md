@@ -18,5 +18,3 @@ Install the bundle
 
 There are definitely many things that can be improved. If you can think
 of anything, don't hesitate to open an issue or make a pull request.
-
-### You can read more about me [on my personal website](http://jakubarnold.cz)
