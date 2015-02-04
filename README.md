@@ -12,8 +12,6 @@ Install the bundle
 
     vim +:BundleInstall
 
-**And enjoy the uber experience these dotfiles provide.**
-
 # Contributing
 
 There are definitely many things that can be improved. If you can think
