@@ -317,6 +317,7 @@ nnoremap - :Switch<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 nnoremap <leader>e :call VimuxRunCommand("make")<cr>
 nnoremap <leader>v :view %%
+
 " open file in a tab
 " map <Leader>te :tabe %%
 
