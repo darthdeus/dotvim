@@ -3,6 +3,8 @@
 First you're going to need to clone this repository to `~/.vim`
 
     git clone https://github.com/darthdeus/dotvim ~/.vim
+    cd ~/.vim
+    git submodule update --init --recursive
 
 Symlink the `vimrc`
 
