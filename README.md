@@ -14,6 +14,11 @@ Install the bundle
 
     vim +:BundleInstall
 
+Build the clang completer
+
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.sh --clang-completer
+
 # Contributing
 
 There are definitely many things that can be improved. If you can think
