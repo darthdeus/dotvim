@@ -139,10 +139,9 @@ let g:syntastic_cpp_compiler_options = ' -std=c++1y -stdlib=libc++'
 let g:syntastic_enable_signs=1
 
 let g:syntastic_cpp_check_header = 0
-"
+
 " let g:syntastic_quiet_messages=1
 let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp", "idris", "rust"] }
-
 
 set foldlevelstart=200
 
@@ -474,6 +473,7 @@ aug various_file_types
   au BufNewFile,BufRead *.em set filetype=coffee
 
   au BufNewFile,BufRead *.thrift set filetype=thrift
+  au BufNewFile,BufRead *.conf set filetype=conf
 aug END
 
 " load the plugin and indent settings for the detected filetype
