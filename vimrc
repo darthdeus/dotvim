@@ -485,8 +485,6 @@ let macvim_hig_shift_movement = 1
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
-let g:_rspec_command="zeus rspec"
-
 " Run this file
 noremap <leader>t :call RunTestFile()<cr>
 " Run only the example under the cursor
