@@ -471,8 +471,6 @@ aug various_file_types
   au BufNewFile,BufRead *.ejs set filetype=html
 
   au BufNewFile,BufRead *.em set filetype=coffee
-
-  au BufNewFile,BufRead *.thrift set filetype=thrift
   au BufNewFile,BufRead *.conf set filetype=conf
 aug END
 
