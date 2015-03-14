@@ -251,11 +251,7 @@ set bg=dark
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 
-" if $COLORTERM == 'gnome-terminal'
-"   color Tomorrow-Night-Bright
-" else
-  color base16-default
-" endif
+color base16-default
 
 " Directories for swp files
 set backupdir=~/.vim/backup
