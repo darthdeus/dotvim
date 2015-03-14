@@ -341,7 +341,6 @@ noremap <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 noremap <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
 noremap <leader>gs :CommandTFlush<cr>\|:CommandT app/services<cr>
 noremap <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-noremap <leader>gd :CommandTFlush<cr>\|:CommandT app/decorators<cr>
 noremap <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 noremap <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
 noremap <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
