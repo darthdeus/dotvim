@@ -345,7 +345,6 @@ noremap <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 noremap <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
 noremap <leader>gk :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
 noremap <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
-noremap <leader>ga :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
 
 nnoremap <C-a> ^
 nnoremap <C-e> $
