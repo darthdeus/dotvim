@@ -417,6 +417,7 @@ cnoremap <C-g>  <C-c>
 inoremap <c-u> <esc>viwUgi
 nnoremap <c-u> viwU
 
+" Disable accidental ex mode
 nmap Q <NOP>
 
 
