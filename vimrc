@@ -91,10 +91,10 @@ Bundle "rhysd/vim-clang-format"
 Bundle "kana/vim-operator-user"
 
 Bundle "mattn/emmet-vim"
-Bundle "scrooloose/syntastic"
 Bundle "dag/vim2hs"
 
-Bundle "Valloric/YouCompleteMe"
+" Bundle "scrooloose/syntastic"
+" Bundle "Valloric/YouCompleteMe"
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_extra_conf_globlist = ['*']
 
