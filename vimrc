@@ -98,8 +98,6 @@ Bundle "dag/vim2hs"
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_extra_conf_globlist = ['*']
 
-Bundle "pbrisbin/html-template-syntax"
-
 let g:haskell_conceal = 0
 let g:haskell_quasi         = 1
 let g:haskell_interpolation = 0
