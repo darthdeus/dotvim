@@ -260,8 +260,6 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=T
 
-set guifont=Monaco\ for\ Powerline:h14
-
 if has("gui_running")
   " Automatically resize splits when resizing MacVim window
   autocmd VimResized * wincmd =
