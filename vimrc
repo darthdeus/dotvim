@@ -109,7 +109,7 @@ let g:haskell_json          = 0
 let g:haskell_xml           = 0
 let g:hpaste_author = "darthdeus"
 
-let g:syntastic_haskell_checkers = ['hdevtools']
+let g:syntastic_haskell_checkers = ['']
 
 Bundle "Shougo/vimproc.vim"
 
