@@ -97,6 +97,8 @@ Bundle "kana/vim-operator-user"
 Bundle "mattn/emmet-vim"
 Bundle "dag/vim2hs"
 
+Bundle "Raimondi/delimitMate"
+
 " Bundle "scrooloose/syntastic"
 " Bundle "Valloric/YouCompleteMe"
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
