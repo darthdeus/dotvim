@@ -32,6 +32,10 @@ Bundle "tpope/vim-surround"
 Bundle "tpope/vim-rake"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-fireplace"
+Bundle "tpope/vim-leiningen"
+Bundle "tpope/vim-projectionist"
+Bundle "tpope/vim-dispatch"
 
 " Snippets
 Bundle "SirVer/ultisnips"
