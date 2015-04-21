@@ -37,6 +37,8 @@ Bundle "tpope/vim-leiningen"
 Bundle "tpope/vim-projectionist"
 Bundle "tpope/vim-dispatch"
 
+Bundle "wlangstroth/vim-racket"
+
 " Snippets
 Bundle "SirVer/ultisnips"
 Bundle "honza/vim-snippets"
