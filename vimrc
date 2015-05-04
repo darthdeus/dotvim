@@ -33,8 +33,8 @@ Bundle "tpope/vim-rake"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-fireplace"
-Bundle "tpope/vim-leiningen"
-Bundle "tpope/vim-projectionist"
+" Bundle "tpope/vim-leiningen"
+" Bundle "tpope/vim-projectionist"
 Bundle "tpope/vim-dispatch"
 
 Bundle "wlangstroth/vim-racket"
@@ -101,8 +101,8 @@ Bundle "dag/vim2hs"
 
 Bundle "Raimondi/delimitMate"
 
-" Bundle "scrooloose/syntastic"
-" Bundle "Valloric/YouCompleteMe"
+Bundle "scrooloose/syntastic"
+Bundle "Valloric/YouCompleteMe"
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_extra_conf_globlist = ['*']
 
@@ -130,7 +130,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_cpp_check_header = 0
 
 " let g:syntastic_quiet_messages=1
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp", "idris", "rust"] }
+" let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp", "idris", "rust"] }
 
 set foldlevelstart=200
 
