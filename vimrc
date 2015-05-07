@@ -99,6 +99,13 @@ Bundle "kana/vim-operator-user"
 Bundle "mattn/emmet-vim"
 Bundle "dag/vim2hs"
 
+Bundle "elixir-lang/vim-elixir"
+Bundle "jimenezrick/vimerl"
+" Bundle "vim-erlang/vim-erlang-runtime"
+" Bundle "vim-erlang/vim-erlang-compiler"
+" Bundle "vim-erlang/vim-erlang-omnicomplete"
+" Bundle "vim-erlang/vim-erlang-tags"
+
 Bundle "Raimondi/delimitMate"
 
 Bundle "scrooloose/syntastic"
