@@ -336,11 +336,11 @@ vnoremap <C-Right> <C-w><C-l>
 " fat fingers
 noremap <F1> <Esc>
 
-inoremap     <C-X><C-@> <C-A>
+inoremap <C-X><C-@> <C-A>
 " Emacs style mappings
-inoremap          <C-A> <C-O>^
-cnoremap          <C-A> <Home>
-cnoremap     <C-X><C-A> <C-A>
+inoremap      <C-A> <C-O>^
+cnoremap      <C-A> <Home>
+cnoremap <C-X><C-A> <C-A>
 
 " If at end of a line of spaces, delete back to the previous line.
 " Otherwise, <Left>
