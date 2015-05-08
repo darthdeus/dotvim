@@ -33,8 +33,6 @@ Bundle "tpope/vim-rake"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-fireplace"
-" Bundle "tpope/vim-leiningen"
-" Bundle "tpope/vim-projectionist"
 Bundle "tpope/vim-dispatch"
 
 Bundle "wlangstroth/vim-racket"
@@ -101,11 +99,6 @@ Bundle "dag/vim2hs"
 
 Bundle "elixir-lang/vim-elixir"
 Bundle "jimenezrick/vimerl"
-" Bundle "vim-erlang/vim-erlang-runtime"
-" Bundle "vim-erlang/vim-erlang-compiler"
-" Bundle "vim-erlang/vim-erlang-omnicomplete"
-" Bundle "vim-erlang/vim-erlang-tags"
-
 Bundle "Raimondi/delimitMate"
 
 Bundle "scrooloose/syntastic"
