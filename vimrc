@@ -412,7 +412,6 @@ aug various_file_types
   au BufNewFile,BufRead *.json set filetype=javascript
   au BufNewFile,BufRead *.txt call s:setupWrapping()
 
-  au BufNewFile,BufRead *.fish set filetype=fish
   au BufNewFile,BufRead *.conf set filetype=conf
 aug END
 
