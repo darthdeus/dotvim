@@ -92,9 +92,13 @@ Bundle "kana/vim-operator-user"
 Bundle "mattn/emmet-vim"
 Bundle "dag/vim2hs"
 
+set foldlevelstart=200
+
 Bundle "elixir-lang/vim-elixir"
 Bundle "jimenezrick/vimerl"
 Bundle "Raimondi/delimitMate"
+
+Bundle "Shougo/vimproc.vim"
 
 Bundle "scrooloose/syntastic"
 Bundle "Valloric/YouCompleteMe"
@@ -113,8 +117,6 @@ let g:haskell_xml           = 0
 
 let g:syntastic_haskell_checkers = ['']
 
-Bundle "Shougo/vimproc.vim"
-
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++1y -stdlib=libc++'
 
@@ -124,8 +126,6 @@ let g:syntastic_cpp_check_header = 0
 
 " let g:syntastic_quiet_messages=1
 let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp", "idris", "rust", "elixir"] }
-
-set foldlevelstart=200
 
 " gist-vim defaults
 if has("mac")
