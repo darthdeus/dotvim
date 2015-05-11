@@ -110,7 +110,6 @@ let g:haskell_shqq          = 0
 let g:haskell_sql           = 0
 let g:haskell_json          = 0
 let g:haskell_xml           = 0
-let g:hpaste_author = "darthdeus"
 
 let g:syntastic_haskell_checkers = ['']
 
@@ -121,7 +120,6 @@ let g:syntastic_cpp_compiler_options = ' -std=c++1y -stdlib=libc++'
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-
 let g:syntastic_cpp_check_header = 0
 
 " let g:syntastic_quiet_messages=1
