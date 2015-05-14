@@ -175,7 +175,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 " Note that the dot is a unicode character
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:\ \ ,trail:.
 
 " Searching
 set hlsearch
