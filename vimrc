@@ -279,7 +279,7 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 
 " Open files with <leader>f
-noremap <leader>f  :CommandTFlush<cr>\|:CommandT .<CR>
+noremap <leader>f  :CommandTFlush<cr>\|:CommandT ./<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
 noremap <leader>F  :CommandTFlush<cr>\|:CommandT %%<CR>
 noremap <leader>gf :CommandTFlush<cr>\|:CommandT %%<CR>
