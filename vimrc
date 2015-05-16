@@ -45,7 +45,6 @@ Plug 'mattn/webapi-vim'
 
 Plug 'kurko/smartest.vim'
 Plug 'kurko/autocoder.vim'
-Plug 'ecomba/vim-ruby-refactoring'
 Plug 'mattn/zencoding-vim'
 
 Plug 'sjl/gundo.vim'
@@ -299,16 +298,6 @@ noremap <leader>gj :CommandTFlush<cr>\|:CommandT ./app/assets/javascripts<cr>
 
 nnoremap <C-a> ^
 nnoremap <C-e> $
-
-nnoremap <leader>rap  :RAddParameter<cr>
-nnoremap <leader>rcpc :RConvertPostConditional<cr>
-nnoremap <leader>rel  :RExtractLet<cr>
-vnoremap <leader>rec  :RExtractConstant<cr>
-vnoremap <leader>relv :RExtractLocalVariable<cr>
-nnoremap <leader>rit  :RInlineTemp<cr>
-vnoremap <leader>rrlv :RRenameLocalVariable<cr>
-vnoremap <leader>rriv :RRenameInstanceVariable<cr>
-vnoremap <leader>rem  :RExtractMethod<cr>
 
 " For easier navigation between windows
 nnoremap <C-j> <C-w><C-j>
