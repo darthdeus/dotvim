@@ -3,38 +3,73 @@ set nocompatible
 
 set shell=sh
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-set rtp+=/usr/local/opt/go/libexec/misc/vim
-call vundle#rc()
+call plug#begin('~/.vim/bundle')
 
-Bundle "vim-scripts/a.vim"
-Bundle "gmarik/vundle"
-Bundle "benmills/vimux"
+Plug 'vim-scripts/a.vim'
+Plug 'gmarik/vundle'
+Plug 'benmills/vimux'
+
+Plug 'rking/ag.vim'
+
+Plug 'tomtom/tcomment_vim'
+Plug 'tomtom/tlib_vim'
+Plug 'godlygeek/tabular'
+Plug 'pangloss/vim-javascript'
+
+Plug 'wincent/Command-T'
+
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-markdown'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'slim-template/vim-slim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'scrooloose/nerdtree'
+
+Plug 'krisajenkins/vim-projectlocal'
+Plug 'AndrewRadev/switch.vim'
+Plug 'eshock/vim-matchit'
+Plug 'skwp/vim-rspec'
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+
+Plug 'kurko/smartest.vim'
+Plug 'kurko/autocoder.vim'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'mattn/zencoding-vim'
+
+Plug 'sjl/gundo.vim'
+Plug 'othree/html5.vim'
+
+Plug 'rhysd/vim-clang-format'
+Plug 'kana/vim-operator-user'
+
+Plug 'mattn/emmet-vim'
+Plug 'dag/vim2hs'
+
+Plug 'elixir-lang/vim-elixir'
+Plug 'jimenezrick/vimerl'
+Plug 'Raimondi/delimitMate'
+
+Plug 'Shougo/vimproc.vim'
+
+Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe'
+
+call plug#end()
+
+
 let g:VimuxOrientation = "h"
-
-Bundle "rking/ag.vim"
-
-Bundle "tomtom/tcomment_vim"
-Bundle "tomtom/tlib_vim"
-Bundle "godlygeek/tabular"
-Bundle "pangloss/vim-javascript"
-
-Bundle "wincent/Command-T"
-
-Bundle "tpope/vim-bundler"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-eunuch"
-Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-rake"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-markdown"
-
-" Snippets
-Bundle "SirVer/ultisnips"
-Bundle "honza/vim-snippets"
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -66,46 +101,11 @@ endfunction
 
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "slim-template/vim-slim"
-Bundle "kchmck/vim-coffee-script"
-Bundle "scrooloose/nerdtree"
-
-Bundle "krisajenkins/vim-projectlocal"
-Bundle "AndrewRadev/switch.vim"
-Bundle "eshock/vim-matchit"
-Bundle "skwp/vim-rspec"
-Bundle "mattn/gist-vim"
-Bundle "mattn/webapi-vim"
-
-Bundle "kurko/smartest.vim"
-Bundle "kurko/autocoder.vim"
-Bundle "ecomba/vim-ruby-refactoring"
-Bundle "mattn/zencoding-vim"
-
-Bundle "sjl/gundo.vim"
-Bundle "othree/html5.vim"
-
-Bundle "rhysd/vim-clang-format"
-Bundle "kana/vim-operator-user"
-
-Bundle "mattn/emmet-vim"
-Bundle "dag/vim2hs"
-
-set foldlevelstart=200
-
-Bundle "elixir-lang/vim-elixir"
-Bundle "jimenezrick/vimerl"
-Bundle "Raimondi/delimitMate"
-
-Bundle "Shougo/vimproc.vim"
-
-Bundle "scrooloose/syntastic"
-Bundle "Valloric/YouCompleteMe"
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_extra_conf_globlist = ['*']
 
-let g:haskell_conceal = 0
+set foldlevelstart=200
+let g:haskell_conceal       = 0
 let g:haskell_quasi         = 1
 let g:haskell_interpolation = 0
 let g:haskell_regex         = 0
@@ -140,12 +140,6 @@ let g:gist_post_private = 1
 " Turn off jslint errors by default
 let g:JSLintHighlightErrorLine = 0
 
-filetype plugin indent on
-
-" Include user's local pre .vimrc config
-if filereadable(expand("~/.vimrc.pre"))
-  source ~/.vimrc.pre
-endif
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
@@ -156,7 +150,6 @@ set history=1000
 
 set number
 set ruler
-syntax on
 
 " Set encoding
 set encoding=utf-8
@@ -167,7 +160,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-" Note that the dot is a unicode character
+
 set list listchars=tab:\ \ ,trail:.
 
 " Searching
@@ -185,7 +178,7 @@ set laststatus=0
 " TODO - how does this differ from "longest,list" only?
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp,project/target,target,tags,CMakeFiles,bower_components,dist,_darcs,vcr,app/assets/images,*.dSYM,*.pyc,_build,deps
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,node_modules,tmp,project/target,target,tags,CMakeFiles,bower_components,dist,_darcs,vcr,app/assets/images,*.dSYM,*.pyc,_build,deps,rel
 
 " TODO - what is the default behavior?
 " Remap the tab key to do autocompletion or indentation depending on the
@@ -206,7 +199,6 @@ command! W :w
 
 " Status bar
 set laststatus=2
-
 set winwidth=75
 
 " Change the leader to ","
@@ -220,7 +212,6 @@ set t_Co=256
 set bg=dark
 
 let base16colorspace=256  " Access colors present in 256 colorspace
-
 color base16-default
 
 " Directories for swp files
