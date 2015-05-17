@@ -32,7 +32,7 @@ Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'slim-template/vim-slim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTree' }
 
 Plug 'krisajenkins/vim-projectlocal'
 Plug 'AndrewRadev/switch.vim'
