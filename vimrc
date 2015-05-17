@@ -18,9 +18,7 @@ Plug 'pangloss/vim-javascript'
 
 Plug 'wincent/Command-T'
 
-Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
