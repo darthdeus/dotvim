@@ -432,5 +432,19 @@ if has("user_commands")
   command! -bang Qa qa<bang>
 endif
 
+function! s:profilestop()
+  profdel func *
+  profdel file *
+  qa!
+endfunction
+
+function! s:profilestart()
+  profile start vim.profile
+  profile func *
+  profile file *
+endfunction
+
+command! -nargs=0 StopProfiling call s:profilestop()
+
 set exrc
 set secure
