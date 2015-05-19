@@ -54,8 +54,8 @@ Plug 'kana/vim-operator-user'
 Plug 'mattn/emmet-vim'
 Plug 'dag/vim2hs'
 
-Plug 'elixir-lang/vim-elixir'
 Plug 'jimenezrick/vimerl'
+Plug 'elixir-lang/vim-elixir'
 Plug 'Raimondi/delimitMate'
 
 " Plug 'Shougo/vimproc.vim'
@@ -63,7 +63,6 @@ Plug 'Raimondi/delimitMate'
 " Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
-
 
 let g:VimuxOrientation = "h"
 
