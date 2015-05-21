@@ -392,9 +392,6 @@ aug END
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
-
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
