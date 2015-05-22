@@ -41,7 +41,6 @@ Plug 'skwp/vim-rspec'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 
-Plug 'kurko/smartest.vim'
 Plug 'kurko/autocoder.vim'
 Plug 'mattn/zencoding-vim'
 
