@@ -59,7 +59,7 @@ Plug 'Raimondi/delimitMate'
 
 " Plug 'Shougo/vimproc.vim'
 " Plug 'scrooloose/syntastic', { 'for': 'cpp' }
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
