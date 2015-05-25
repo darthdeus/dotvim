@@ -271,7 +271,6 @@ nnoremap <leader>v :view %%
 " Command mode: Ctrl+P
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-
 " Open files with <leader>f
 noremap <leader>f  :CommandTFlush<cr>\|:CommandT ./<CR>
 " Open files, limited to the directory of the current files, with <leader>gf
