@@ -252,8 +252,6 @@ endif
 " Highlight current line
 set cursorline
 
-set tags+=gems.tags
-
 " Buffer resizing with arrow keys
 nnoremap <Up> <C-w>5-
 nnoremap <Down> <C-w>5+
