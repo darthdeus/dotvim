@@ -396,7 +396,7 @@ noremap <leader>t :call RunTestFile()<cr>
 " Run only the example under the cursor
 noremap <leader>T :call RunNearestTest()<cr>
 " Run all test files
-noremap <leader>a :!zeus rspec spec<cr>
+noremap <leader>a :!bundle exec rspec spec<cr>
 
 " remove unnecessary whitespaces
 noremap <leader>ws :%s/ *$//g<cr><c-o><cr>
