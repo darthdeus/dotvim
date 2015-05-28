@@ -404,8 +404,8 @@ noremap <leader>ws :%s/ *$//g<cr><c-o><cr>
 set pastetoggle=<F5>
 set mouse=a
 
-autocmd FileType c,cpp,objc nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><C-e> :ClangFormat<CR>
+autocmd FileType c,cpp nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp vnoremap <buffer><C-e> :ClangFormat<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
