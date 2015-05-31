@@ -263,7 +263,6 @@ nnoremap - :Switch<cr>
 " Expand %% to directory path of current buffer
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 nnoremap <leader>e :call VimuxRunCommand("make")<cr>
-nnoremap <leader>v :view %%
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
