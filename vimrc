@@ -57,8 +57,8 @@ Plug 'jimenezrick/vimerl'
 Plug 'elixir-lang/vim-elixir'
 Plug 'Raimondi/delimitMate'
 
-" Plug 'Shougo/vimproc.vim'
-" Plug 'scrooloose/syntastic', { 'for': 'cpp' }
+Plug 'Shougo/vimproc.vim'
+Plug 'scrooloose/syntastic', { 'for': 'cpp' }
 Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
