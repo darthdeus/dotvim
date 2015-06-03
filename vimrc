@@ -363,6 +363,7 @@ nnoremap <CR> :nohlsearch<CR>/<BS>
 
 noremap <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
 
+" Used for text files which should be wrapped by default
 function s:setupWrapping()
   set wrap
   set wrapmargin=2
