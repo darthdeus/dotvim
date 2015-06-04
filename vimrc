@@ -164,6 +164,8 @@ set incsearch
 set ignorecase
 set smartcase
 
+nnoremap <CR> :nohlsearch<CR>/<BS>
+
 " Make tab completion for files/buffers act like bash
 set wildmenu
 
@@ -358,8 +360,6 @@ nnoremap <leader><leader> <c-^>
 " CTags
 noremap <leader>ct :!ctags --extra=+f -R *<CR>
 noremap <C-\> :tnext<CR>
-
-nnoremap <CR> :nohlsearch<CR>/<BS>
 
 noremap <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
 
