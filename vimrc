@@ -163,7 +163,6 @@ set incsearch
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase
 set smartcase
-
 nnoremap <CR> :nohlsearch<CR>/<BS>
 
 " Make tab completion for files/buffers act like bash
@@ -268,6 +267,7 @@ nnoremap <leader>e :call VimuxRunCommand("make")<cr>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
+" TODO - figure out more clever usage for this
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Open files with <leader>f
