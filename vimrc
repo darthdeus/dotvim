@@ -8,6 +8,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'vim-scripts/a.vim'
 Plug 'gmarik/vundle'
 Plug 'benmills/vimux'
+Plug 'drmikehenry/vim-headerguard'
 
 Plug 'rking/ag.vim'
 
@@ -404,8 +405,9 @@ noremap <leader>ws :%s/ *$//g<cr><c-o><cr>
 set pastetoggle=<F5>
 set mouse=a
 
-autocmd FileType c,cpp nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp vnoremap <buffer><C-e> :ClangFormat<CR>
+autocmd FileType h,cc,c,cpp nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
+autocmd FileType h,cc,c,cpp nnoremap <buffer><leader>ha :HeaderguardAdd<CR>
+autocmd FileType h,cc,c,cpp vnoremap <buffer><C-e> :ClangFormat<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
