@@ -405,6 +405,8 @@ noremap <leader>ws :%s/ *$//g<cr><c-o><cr>
 set pastetoggle=<F5>
 set mouse=a
 
+let g:clang_format#code_style = "google"
+
 autocmd FileType h,cc,c,cpp nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
 autocmd FileType h,cc,c,cpp nnoremap <buffer><leader>ha :HeaderguardAdd<CR>
 autocmd FileType h,cc,c,cpp vnoremap <buffer><C-e> :ClangFormat<CR>
