@@ -58,10 +58,15 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'Raimondi/delimitMate'
 
 Plug 'Shougo/vimproc.vim'
-Plug 'scrooloose/syntastic', { 'for': 'cpp' }
+Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
+
+" TODO - TComment to use // C++ style comments in C files
+
+" Change the leader to ","
+let mapleader=","
 
 let g:VimuxOrientation = "h"
 
@@ -95,9 +100,6 @@ endfunction
 
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_extra_conf_globlist = ['*']
-
 set foldlevelstart=200
 let g:haskell_conceal       = 0
 let g:haskell_quasi         = 1
@@ -109,6 +111,23 @@ let g:haskell_sql           = 0
 let g:haskell_json          = 0
 let g:haskell_xml           = 0
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_extra_conf_globlist = ['*']
+let g:ycm_show_diagnostics_ui = 1
+
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>je :YcmCompleter GoToDeclaration<CR>
+
 let g:syntastic_haskell_checkers = ['']
 
 let g:syntastic_cpp_compiler = 'clang++'
@@ -118,8 +137,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++1y -stdlib=libc++'
 let g:syntastic_enable_signs=1
 let g:syntastic_cpp_check_header = 0
 
-" let g:syntastic_quiet_messages=1
-let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "cpp", "idris", "rust", "elixir"] }
+let g:syntastic_mode_map = { "mode": "passive", "active_filetypes": ["haskell", "go", "c", "cpp", "idris", "rust", "elixir"] }
 
 " gist-vim defaults
 if has("mac")
@@ -195,9 +213,6 @@ command! W :w
 " Status bar
 set laststatus=2
 set winwidth=75
-
-" Change the leader to ","
-let mapleader=","
 
 " Use modeline overrides
 set modeline
