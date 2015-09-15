@@ -6,7 +6,6 @@ set shell=sh
 call plug#begin('~/.vim/bundle')
 
 Plug 'vim-scripts/a.vim'
-Plug 'gmarik/vundle'
 Plug 'benmills/vimux'
 Plug 'drmikehenry/vim-headerguard'
 
