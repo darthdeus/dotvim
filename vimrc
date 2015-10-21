@@ -384,13 +384,6 @@ noremap <C-\> :tnext<CR>
 
 noremap <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
 
-" Used for text files which should be wrapped by default
-function s:setupWrapping()
-  set wrap
-  set wrapmargin=2
-  set textwidth=72
-endfunction
-
 aug various_file_types
   au!
   " Rakefile, Vagrantfile and Gemfile are Ruby
@@ -399,7 +392,6 @@ aug various_file_types
 
   " add json syntax highlighting
   au BufNewFile,BufRead *.json set filetype=javascript
-  au BufNewFile,BufRead *.txt call s:setupWrapping()
 
   au BufNewFile,BufRead *.conf set filetype=conf
 aug END
