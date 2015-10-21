@@ -395,9 +395,7 @@ aug various_file_types
   au!
   " Rakefile, Vagrantfile and Gemfile are Ruby
   au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Vagrantfile,config.ru} set ft=ruby
-
-  " md, markdown, and mk are markdown and define buffer-local preview
-  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupWrapping()
+  au BufRead,BufNewFile *.asm set ft=nasm
 
   " add json syntax highlighting
   au BufNewFile,BufRead *.json set filetype=javascript
