@@ -60,6 +60,8 @@ Plug 'jimenezrick/vimerl'
 Plug 'elixir-lang/vim-elixir'
 Plug 'Raimondi/delimitMate'
 
+Plug 'fatih/vim-go'
+
 Plug 'Shougo/vimproc.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
@@ -394,6 +396,7 @@ aug various_file_types
   au BufNewFile,BufRead *.json set filetype=javascript
 
   au BufNewFile,BufRead *.conf set filetype=conf
+  au BufNewFile,BufRead *vimrc set filetype=vim
 aug END
 
 " load the plugin and indent settings for the detected filetype
